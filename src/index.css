@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Underline Stroke Effect */
+.underline-stroke:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  height: 2px;
+  background: #aaa;
+  transition: width 0.5s ease-in-out;
+}
+
+.underline-stroke:hover:after {
+  width: 100%;
+  background: #fff;
+
+}
+
+.custom-swiper {
+  width: 100%;
+  height: 500px; 
+
+}
+.custom-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  margin-top: 20px;
+}
+.custom-slide .card {
+  position: relative; 
+  height: 100%;
+  width: 411px;
+  padding: 60px 20px 20px;
+  /* text-align: center; */
+  
+}
+.custom-img-container {
+  position: absolute;
+  top:0%;
+  transform: translate(70%,0%);
+  width: 150px;
+  height: 150px;
+  z-index: 4;
+}
+
+.custom-img-container img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+.custom-slide .card .content-container{
+  height: 350px;
+  width: 100%; 
+  border-radius: 30px;
+  border: 2px solid #1b5e20;
+  background: #fff;
+}
+@media (max-width: 560px) {
+  .custom-swiper {
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 20px; /* Add some padding for mobile */
+  }
+
+  .custom-slide .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+    padding: 40px 10px 10px; 
+  }
+
+  .custom-img-container {
+    transform: translate(0,0);
+    width: 100px; /* Reduce the size of the image */
+    height: 100px; /* Maintain proportional dimensions */
+  }
+
+  .custom-slide .card .content-container {
+    height: 300px; 
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+}
