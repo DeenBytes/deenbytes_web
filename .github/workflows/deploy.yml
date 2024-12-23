@@ -1,0 +1,63 @@
+name: Deploy React App to Ubuntu Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PORT: ${{ secrets.SSH_PORT }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+      ENV_FILE: ${{ vars.ENV_FILE }}
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.18.0
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Create .env file from GitHub variables
+      - name: Create .env file from secret
+        run: echo "$ENV_FILE" > .env
+
+      # Build the React app
+      - name: Build React app
+        run: npm run build
+
+      # Set up SSH key for secure connection
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: $SSH_PRIVATE_KEY
+
+      # Deploy to the server
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USERNAME@$SSH_HOST << 'EOF'
+            sudo rm -rf /var/www/website/*
+            exit
+          EOF
+          scp -P $SSH_PORT -r ./build/* $SSH_USERNAME@$SSH_HOST:/var/www/website/
+
+      # Restart Nginx
+      - name: Restart Nginx
+        run: |
+          ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USERNAME@$SSH_HOST << 'EOF'
+            sudo nginx -s reload
+            exit
+          EOF
