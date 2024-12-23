@@ -65,7 +65,7 @@ const Home = () => {
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut} 
           >
-            {allahNameList.map((item, index) => (
+            { allahNameList && allahNameList.length > 0 && allahNameList?.map((item, index) => (
               <span
                 key={index}
                 className={`text-arabic text-3xl md:text-5xl mx-5 ${index % 2 === 0 ? "text-[#C99B45]" : "text-[#E9C480]"
