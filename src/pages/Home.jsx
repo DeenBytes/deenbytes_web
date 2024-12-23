@@ -4,7 +4,8 @@ import Slider from '../components/Slider'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Autoplay } from 'swiper/modules';
+import "swiper/css/navigation";
+import { Autoplay ,Navigation} from 'swiper/modules';
 import CourseTracks from '../components/CourseTracks';
 import { Link } from 'react-router-dom';
 const Home = () => {
@@ -59,7 +60,7 @@ const Home = () => {
           <marquee
             ref={marqueeRef}
             behavior="scroll"
-            direction="left"
+            direction="right"
             scrollamount="10"
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut} 
@@ -159,7 +160,7 @@ const Home = () => {
               These services are designed to make practicing Islam easier and more accessible for everyone.
             </p>
             <Swiper
-              slidesPerView={1.25}
+              slidesPerView={1}
               spaceBetween={20}
               centeredSlides={false}
               autoplay={{
@@ -174,14 +175,15 @@ const Home = () => {
                   slidesPerView: 3.25,
                 },
               }}
-              modules={[Autoplay]}
+              navigation={true}
+              modules={[Autoplay, Navigation]}
               className="mySwiper custom-swiper"
             >
               {slides.map((slide, index) => (
-                <SwiperSlide key={index} className="custom-slide">
+                <SwiperSlide key={index} className="custom-slide cursor-pointer hover:transform hover:scale-105 transition-transform duration-300">
                   <div className="card">
                     <div className="custom-img-container">
-                      <img src={slide.image} alt={slide.title} />
+                      <img src={slide.image} alt={slide.title} className='object-contain' />
                     </div>
                     <div className="content-container md:px-6">
                       <div className='relative top-12 md:top-24 pb-4 lg:p-5'>
@@ -216,7 +218,7 @@ const Home = () => {
         </section>
 
         {/* Newsletter section start here  */}
-        <div className="min-h-screen bg-[#EBFFF1]">
+        <div className=" bg-[#EBFFF1]">
           {/* Curved header section */}
           <div className="relative bg-secondary md:rounded-b-[40%] text-center px-4 py-8 md:py-8">
             <h1 className="text-3xl md:text-4xl  text-white font-bold text-center mb-2">

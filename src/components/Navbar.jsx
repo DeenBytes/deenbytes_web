@@ -11,7 +11,7 @@ const Navbar = () => {
     const toggleSubmenu = (id) => setSubmenuOpen(submenuOpen === id ? null : id);
 
     return (
-        <div className="h-[80px] flex justify-between items-center text-white sticky top-0 z-50 bg-no-repeat bg-center bg-cover shadow-md  py-4 px-4" style={{ backgroundImage: "url('./assets/DeenbytesHeader.png')" }}>
+        <div className="h-[80px] flex justify-between items-center text-white sticky top-0 z-50 bg-no-repeat bg-center bg-cover shadow-md py-4 px-4" style={{ backgroundImage: "url('./assets/DeenbytesHeader.png')" }}>
                 <div className="flex items-center gap-2">
                     <img
                         src="./assets/DeenbyteLogo.png"

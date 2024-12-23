@@ -64,7 +64,7 @@ export default function Slider() {
   return (
     <div className="relative w-full overflow-hidden bg-primary ">
       {/* Main Slider */}
-      <div className="relative h-[400px] lg:h-[400px] w-full">
+      <div className="relative h-[400px] lg:h-[500px] w-full">
         <div 
           className="absolute inset-0 z-10"
           onMouseEnter={() => setIsAutoPlaying(false)}

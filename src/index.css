@@ -46,7 +46,7 @@ body {
   position: relative; 
   height: 100%;
   width: 411px;
-  padding: 60px 20px 20px;
+  padding: 50px 20px 20px;
   /* text-align: center; */
   
 }
@@ -62,7 +62,7 @@ body {
 .custom-img-container img {
   width: 100%; 
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .custom-slide .card .content-container{
   height: 350px;
@@ -100,3 +100,19 @@ body {
     border-radius: 15px;
   }
 }
+/* Change the default color of navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1b5e20!important; 
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #4caf50; 
+}
+.swiper-button-next,
+.swiper-button-prev {
+color:#4caf50;
+  padding: 10px;
+}
+
