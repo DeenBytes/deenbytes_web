@@ -49,10 +49,10 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USERNAME@$SSH_HOST << EOF
-            sudo rm -rf /var/www/website/*
+            sudo rm -rf /var/www/html/*
             exit
           EOF
-          scp -P $SSH_PORT -r ./build/* $SSH_USERNAME@$SSH_HOST:/var/www/website/
+          scp -P $SSH_PORT -r ./build/* $SSH_USERNAME@$SSH_HOST:/var/www/html/
 
       # Restart Nginx
       - name: Restart Nginx
