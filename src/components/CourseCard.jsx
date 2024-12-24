@@ -4,11 +4,11 @@ const CourseCard = (course) => {
 
     return (
         <div className="relative w-full max-w-[417px] h-auto sm:h-[390px] bg-white rounded-xl shadow-md mx-auto">
-            <div className="relative h-48 p-4">
+            <div className="relative h-48 w-full p-4">
                 <img
                     src={course?.thumbnail_Image}
                     alt={`deenBytes ${course?.course_Name}`}
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-fill rounded-lg"
                 />
 
             </div>
@@ -50,7 +50,7 @@ const CourseCard = (course) => {
                 </div>
             </div>
 
-            <button className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 bg-secondary text-white py-3 sm:py-3 rounded-lg hover:bg-primary transition-colors text-sm font-semibold z-10 w-10/12 uppercase tracking-wider ">
+            <button className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 bg-secondary text-white py-3 sm:py-3  hover:bg-primary transition-colors text-base rounded-full font-semibold z-10 w-10/12  tracking-wider ">
                 Join Course
             </button>
         </div>
