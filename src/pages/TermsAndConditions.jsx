@@ -1,10 +1,14 @@
 import React from "react";
+import GotoTop from "../components/reusebleComp/GotoTop";
+import { Link } from "react-router-dom";
 
 const TermsAndConditions = () => {
   return (
+    <>
+    <GotoTop />
     <div className="bg-[#EBFFF1]">
     <div className="px-4 py-10 container mx-auto max-w-6xl text-black">
-        <h1 className="text-2xl md:text-4xl font-bold mb-4 text-secondary">Terms & Conditions for DeenBytes</h1>
+        <h1 className="text-2xl md:text-4xl font-bold mb-6 text-secondary text-center">Terms & Conditions for DeenBytes</h1>
       <p className="font-semibold">
       Welcome to DeenBytes. By using our website, you agree to these Terms and Conditions. Please read them carefully.
       </p>
@@ -39,7 +43,7 @@ const TermsAndConditions = () => {
 
       <h2 className="text-secondary text-lg font-semibold mt-4">6. Privacy Policy</h2>
       <p className="text-gray-600">
-        Refer to our <a href="/" className="text-secondary underline">Privacy Policy</a> to understand how we collect, use, and protect your personal data.
+        Refer to our <Link to="/privacy" className="text-secondary underline">Privacy Policy</Link> to understand how we collect, use, and protect your personal data.
       </p>
 
       <h2 className="text-secondary text-lg font-semibold mt-4">7. Prohibited Activities</h2>
@@ -66,6 +70,7 @@ const TermsAndConditions = () => {
       </p>
     </div>
     </div>
+    </>
   );
 };
 

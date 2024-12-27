@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="space-y-4 md:col-span-2">
                     <h3 className="text-lg font-medium mt-2">Who We Are</h3>
                     <ul className="space-y-1 md:space-y-2">
-                        <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+                        <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
                         <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
                     </ul>
                 </div>
@@ -70,7 +70,7 @@ const Footer = () => {
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Help Center</Link>
                     <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Cookies Policy</Link>
-                    <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+                    <Link to="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
                     <Link to="/Terms-and-Conditions" className="text-sm text-gray-400 hover:text-white transition-colors">Terms and conditions</Link>
                     <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Disclaimer</Link>
                 </div>

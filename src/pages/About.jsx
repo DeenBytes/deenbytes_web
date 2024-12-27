@@ -2,6 +2,7 @@ import React from 'react'
 import { TbTargetArrow } from "react-icons/tb";
 import { FaEye } from "react-icons/fa";
 import { IoDiamondOutline } from "react-icons/io5";
+import GotoTop from '../components/reusebleComp/GotoTop';
 const About = () => {
   const cards = [
     {
@@ -22,10 +23,11 @@ const About = () => {
   ]
   return (
     <>
+    <GotoTop />
       <div className="relative">
         {/* ======== Top about banner start here👇👇👇 ============== */}
         <div
-          className="w-full h-[400px] md:h-[485px] relative bg-cover md:bg-cover lg:bg-contain bg-center md:bg-center bg-no-repeat"
+          className="w-full h-[400px] md:h-[435px] relative bg-cover md:bg-cover lg:bg-contain bg-center md:bg-center bg-no-repeat"
           style={{ backgroundImage: `url("./assets/aboutbg.png")` }}
         >
           {/* Overlay */}

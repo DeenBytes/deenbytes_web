@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from 'swiper/modules';
 import CourseTracks from '../components/CourseTracks';
 import { Link } from 'react-router-dom';
+import GotoTop from '../components/reusebleComp/GotoTop';
 const Home = () => {
   const [allahNameList, setAllahNameList] = useState([])
   const marqueeRef = useRef(null);
@@ -38,6 +39,7 @@ const Home = () => {
   }, [])
   return (
     <>
+    <GotoTop />
       <div className="mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[90vh]  bg-no-repeat bg-cover bg-left md:bg-bottom" style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
         <div className="max-w-2xl flex flex-col ">
           <h1 className="text-5xl font-bold mb-6">

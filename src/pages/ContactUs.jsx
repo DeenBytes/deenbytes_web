@@ -2,12 +2,14 @@ import React from 'react'
 import { IoMail } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { RiMapPin2Fill } from "react-icons/ri";
+import GotoTop from '../components/reusebleComp/GotoTop';
 
 const ContactUs = () => {
 
 
     return (
         <>
+            <GotoTop />
             <div className="min-h-screen p-4 md:p-8">
                 <div className="max-w-7xl mx-auto">
                     <h1 className='text-2xl md:text-5xl text-secondary font-bold text-center mb-8'>Contact Us</h1>
@@ -76,7 +78,7 @@ const ContactUs = () => {
                                         <input
                                             type="text"
                                             placeholder="Jon Doe"
-                                            className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] shadow-md focus:outline-none focus:ring-2 focus:ring-secondary"
+                                            className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F]  focus:outline-none focus:ring-1 focus:ring-secondary"
                                         />
                                     </div>
                                     <div>
@@ -84,7 +86,7 @@ const ContactUs = () => {
                                         <input
                                             type="email"
                                             placeholder="9kPmB@example.com"
-                                            className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary"
+                                            className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
                                         />
                                     </div>
                                 </div>
@@ -95,7 +97,7 @@ const ContactUs = () => {
                                         <select
                                             name="topic"
                                             required
-                                            className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary appearance-none hover:cursor-pointer"
+                                            className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary appearance-none hover:cursor-pointer"
                                             style={{ WebkitAppearance: 'none' }}
                                         >
                                             <option value="" disabled>Select country*</option>
@@ -109,7 +111,7 @@ const ContactUs = () => {
                                         <input
                                             type="text"
                                             placeholder="+91 787576****"
-                                            className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary"
+                                            className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
                                         />
                                     </div>
                                 </div>
@@ -119,7 +121,7 @@ const ContactUs = () => {
                                     <textarea
                                         rows="4"
                                         placeholder="Write your message here..."
-                                        className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary"
+                                        className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
                                     ></textarea>
                                 </div>
 
