@@ -5,26 +5,31 @@ const slides = [
     id: 1,
     title: "يَـٰٓأَيُّهَا ٱلنَّبِىُّ قُل لِّمَن فِىٓ أَيْدِيكُم مِّنَ ٱلْأَسْرَىٰٓ إِن يَعْلَمِ ٱللَّهُ فِى قُلُوبِكُمْ خَيْرًۭا يُؤْتِكُمْ خَيْرًۭا مِّمَّآ أُخِذَ مِنكُمْ وَيَغْفِرْ لَكُمْ ۗ وَٱللَّهُ غَفُورٌۭ رَّحِيمٌۭ",
     description: "O Prophet! Tell the captives in your custody, “If Allah finds goodness in your hearts, He will give you better than what has been taken from you, and forgive you. For Allah is All-Forgiving, Most Merciful.",
+    reference: "Surah Al-Anfal Ayat 70 (8:70 Quran)",
   },
   {
     id: 2,
     title: "وَعَسَىٰٓ أَن تَكْرَهُوا۟ شَيْـًۭٔا وَهُوَ خَيْرٌۭ لَّكُمْ ۖ وَعَسَىٰٓ أَن تُحِبُّوا۟ شَيْـًۭٔا وَهُوَ شَرٌّۭ لَّكُمْ ۗ وَٱللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ",
-    description: "Perhaps you dislike something which is good for you and like something which is bad for you. Allah knows and you do not know.",  
+    description: "Perhaps you dislike something which is good for you and like something which is bad for you. Allah knows and you do not know.", 
+    reference:"Surah Al-Baqarah Ayat 216" 
   },
   {
     id: 3,
     title: "لَقَدْ جَاءَكُمْ رَسُولٌ مِّنْ أَنفُسِكُمْ عَزِيزٌ عَلَيْهِ مَا عَنِتُّمْ حَرِيصٌ عَلَيْكُم بِالْمُؤْمِنِينَ رَءُوفٌ رَّحِيمٌ",
     description: "There certainly has come to you a messenger from among yourselves. He is concerned by your suffering, anxious for your well-being, and gracious and merciful to the believers",
+    reference:"Surah At-Tawbah - 128"
   },
   {
     id: 4,
     title: "قُلۡ يَٰعِبَادِ ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ رَبَّكُمۡ ۚ لِلَّذِينَ أَحۡسَنُواْ فِى هَٰذِهِ ٱلدُّنۡيَا حَسَنَةٌ ۗ وَأَرۡضُ ٱللَّهِ وَٰسِعَةٌ ۗ إِنَّمَا يُوَفَّى ٱلصَّٰبِرُونَ أَجۡرَهُم بِغَيۡرِ حِسَابٍ",
     description: "Say “O My servants who believe! Be mindful of your Lord. Those who do good in this world will have a good reward. And Allah’s earth is spacious. Only those who endure patiently will be given their reward without limit.”",
+    reference:"Surah Az-Zumar - 10"
   },
   {
     id: 5,
     title: "سَتَجِدُونَ ءَاخَرِينَ يُرِيدُونَ أَن يَأۡمَنُوكُمۡ وَيَأۡمَنُواْ قَوۡمَهُمۡ كُلَّ مَا رُدُّوٓاْ إِلَى ٱلۡفِتۡنَةِ أُرۡكِسُواْ فِيهَاۚ فَإِن لَّمۡ يَعۡتَزِلُوكُمۡ وَيُلۡقُوٓاْ إِلَيۡكُمُ ٱلسَّلَمَ وَيَكُفُّوٓاْ أَيۡدِيَهُمۡ فَخُذُوهُمۡ وَٱقۡتُلُوهُمۡ حَيۡثُ ثَقِفۡتُمُوهُمۡۚ وَأُوْلَـٰٓئِكُمۡ جَعَلۡنَا لَكُمۡ عَلَيۡهِمۡ سُلۡطَٰنٗا مُّبِينٗا",
     description: "You will find others who wish to obtain security from you and [to] obtain security from their people. Every time they are returned to [the influence of] disbelief, they fall back into it. So if they do not withdraw from you or offer you peace or restrain their hands, then seize them and kill them wherever you overtake them. And those – We have made for you against them a clear authorization.",
+    reference:"Surat An-Nisa' 4:91"
   }
 ]
 
@@ -64,7 +69,7 @@ export default function Slider() {
   return (
     <div className="relative w-full overflow-hidden bg-primary ">
       {/* Main Slider */}
-      <div className="relative h-[400px] lg:h-[500px] w-full">
+      <div className="relative h-[500px] w-full">
         <div 
           className="absolute inset-0 z-10"
           onMouseEnter={() => setIsAutoPlaying(false)}
@@ -87,6 +92,9 @@ export default function Slider() {
                 </h2>
                 <p className="text-sm md:text-base lg:text-lg text-white/90 max-w-2xl">
                   {slide.description}
+                </p>
+                <p className="text-sm md:text-md lg:text-md text-warning mt-3 max-w-2xl">
+                ( {slide.reference} )
                 </p>
               </div>
             </div>

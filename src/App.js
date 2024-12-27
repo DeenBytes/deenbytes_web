@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from './Layout';
+import ContactUs from './pages/ContactUs';
 const Home = lazy(() => import('./pages/Home')); 
 const About = lazy(() => import('./pages/About'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions')); 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/Terms-and-Conditions" element={<TermsAndConditions />} />
       </Routes>
     </Layout>

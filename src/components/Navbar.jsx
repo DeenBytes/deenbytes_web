@@ -30,14 +30,14 @@ const Navbar = () => {
                         <li key={item?.id} className="relative">
                             <Link
                                 to={item?.link}
-                                className={`text-white hover:text-gray-200 px-3 py-2 flex items-center gap-1 rounded-md transition-all duration-300 ease-in-out  relative ${location.pathname === item?.link ? "bg-[#004D40] font-bold" : ""
+                                className={`text-white text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1 rounded-md transition-all duration-300 ease-in-out  relative ${location.pathname === item?.link ? "bg-[#004D40] font-bold" : ""
                                     } underline-stroke`}
                                 onClick={() => item?.subMenu && toggleSubmenu(item?.id)}
                             >
                                 {item?.name}
                                 {item?.subMenu && (
                                     <IoChevronDownOutline
-                                        size={24}
+                                        size={16}
                                         className={`transform transition-transform ${submenuOpen === item?.id ? "rotate-180" : ""
                                             }`}
                                     />
@@ -49,7 +49,7 @@ const Navbar = () => {
                                         <li key={subItem?.id}>
                                             <Link
                                                 to={subItem?.link}
-                                                className={`block px-4 py-2 transition-all duration-500  ${location.pathname === subItem?.link
+                                                className={`block text-base px-4 py-2 transition-all duration-500  ${location.pathname === subItem?.link
                                                     ? "bg-[#004D40]  font-bold "
                                                     : "hover:bg-[#004D40]"
                                                     }`}

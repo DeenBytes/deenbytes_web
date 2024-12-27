@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import "swiper/css/navigation";
-import { Autoplay ,Navigation} from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import CourseTracks from '../components/CourseTracks';
 import { Link } from 'react-router-dom';
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
   const handleMouseOut = () => {
     marqueeRef.current.start();
   };
-// ======  Fuction to get all allah names ===============\\
+  // ======  Fuction to get all allah names ===============\\
   const getAllahName = async () => {
     try {
       const res = await apiJson.get("/api/Website/allahNameList");
@@ -35,11 +35,10 @@ const Home = () => {
   }
   useEffect(() => {
     getAllahName()
-    console.log("envdata", process.env.REACT_APP_BASE_URL)
   }, [])
   return (
     <>
-      <div className=" mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[90vh]  bg-no-repeat bg-cover bg-left md:bg-bottom" style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
+      <div className="mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[90vh]  bg-no-repeat bg-cover bg-left md:bg-bottom" style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
         <div className="max-w-2xl flex flex-col ">
           <h1 className="text-5xl font-bold mb-6">
             Connect with <span className="text-secondary">Islam</span>
@@ -50,7 +49,7 @@ const Home = () => {
             Empower your faith with DeenBytes App—offering Quran tools, prayer alerts, kids' games, and more.
           </p>
           <Link to='/about'>
-          <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl'>Explore More</button>
+            <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl'>Explore More</button>
           </Link>
         </div>
       </div>
@@ -63,9 +62,9 @@ const Home = () => {
             direction="right"
             scrollamount="10"
             onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut} 
+            onMouseOut={handleMouseOut}
           >
-            { allahNameList && allahNameList.length > 0 && allahNameList?.map((item, index) => (
+            {allahNameList && allahNameList.length > 0 && allahNameList?.map((item, index) => (
               <span
                 key={index}
                 className={`text-arabic text-3xl md:text-5xl mx-5 ${index % 2 === 0 ? "text-[#C99B45]" : "text-[#E9C480]"
@@ -113,7 +112,7 @@ const Home = () => {
                 </p>
               </div>
               <Link to='/about'>
-              <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl'>Read More</button>
+                <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl'>Read More</button>
               </Link>
             </div>
           </div>
@@ -207,9 +206,9 @@ const Home = () => {
         <div className="relative">
           <img
             src="./assets/kidslearning.jpg"
-            alt="kidslearning Deenbytes"
-            className="w-full h-[300px] md:h-full object-fill md:object-contain"
-          />
+            srcset="./assets/kidsLearningMobile.png 480w, ./assets/kidsLearningTab.png 768w, ./assets/kidslearning.jpg 1440w"
+            alt="deenBytes kids learning"
+            width="1440" height="800" />
         </div>
 
         {/* Course section start here  */}
@@ -222,10 +221,10 @@ const Home = () => {
           {/* Curved header section */}
           <div className="relative bg-secondary md:rounded-b-[40%] text-center px-4 py-8 md:py-8">
             <h1 className="text-3xl md:text-4xl  text-white font-bold text-center mb-2">
-            Why Choose Us
+              Why Choose Us
             </h1>
             <p className="text-center text-white mb-0 md:mb-6">
-            Simplify your Islamic lifestyle with innovative tools for worship, learning, and spiritual growth.
+              Simplify your Islamic lifestyle with innovative tools for worship, learning, and spiritual growth.
             </p>
 
           </div>
@@ -237,7 +236,7 @@ const Home = () => {
                 Subscribe to Our Newsletter!
               </h2>
               <p className="text-[#196846] text-sm md:text-base mb-6">
-              Stay inspired and connected! Subscribe to our newsletter for exclusive updates on Islamic tools, prayer reminders, learning resources, and app features designed to enhance your Deen.
+                Stay inspired and connected! Subscribe to our newsletter for exclusive updates on Islamic tools, prayer reminders, learning resources, and app features designed to enhance your Deen.
               </p>
 
               <form className="space-y-4">
@@ -245,7 +244,7 @@ const Home = () => {
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="First Name *"
+                    placeholder="Name"
                     required
                     className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] shadow-md focus:outline-none focus:ring-2 focus:ring-secondary"
                   />
@@ -259,25 +258,6 @@ const Home = () => {
                     className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary"
                   />
                 </div>
-                <div>
-                <select
-                  name="topic"
-                  required
-                  className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary appearance-none hover:cursor-pointer"
-                  style={{ WebkitAppearance: 'none' }}
-                >
-                  <option value="" selected disabled>Select country*</option>
-                  <option value="new-features">India</option>
-                  <option value="muslim-films">Uk</option>
-                  <option value="tv-series">US</option>
-                </select>
-              </div>
-                <textarea
-                name="message"
-                placeholder="Add Message"
-                rows="4"
-                className="w-full p-3 rounded-lg shadow-sm bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary resize-y"
-              ></textarea>
                 <button
                   type="submit"
                   className="w-32 py-3 px-8 bg-secondary hover:bg-primary text-white rounded-full transition-colors duration-200"

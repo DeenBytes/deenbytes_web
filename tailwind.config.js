@@ -12,7 +12,8 @@ module.exports = {
         danger: '#EF4444',
         success: '#22C55E', 
         warning: '#F59E0B',
-        info:'#016B5C'
+        info:'#016B5C',
+        para:'#8A8A8A'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -30,6 +31,7 @@ module.exports = {
       },
       boxShadow: {
         custom: '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
+        customHover: '0 16px 32px 0 #09C22440',
       },
     },
   },
