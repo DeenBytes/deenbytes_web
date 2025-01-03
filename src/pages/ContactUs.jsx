@@ -1,12 +1,69 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMail } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { RiMapPin2Fill } from "react-icons/ri";
 import GotoTop from '../components/reusebleComp/GotoTop';
-
+import Select from "react-select";
+import { apiJson } from '../api';
+import { useFormik } from 'formik';
+import { toast } from 'react-toastify';
 const ContactUs = () => {
+    const [countries, setCountries] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
+    //======Function to get all countries ===============\\
+    const getAllCountries = async () => {
+        try {
+            setLoading(true);
+            const res = await apiJson.get("/api/Website/getCounteryList");
+            if (res?.status === 200) {
+                const data = res?.data?.result?.map((item) => ({
+                    ...item,
+                    value: item?.name,
+                }));
+                setCountries(data);
+            } else {
+                setCountries([]);
+            }
+        } catch (error) {
+            if (error?.response?.status === 404) {
+                setCountries([]);
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
 
+    useEffect(() => {
+        getAllCountries();
+    }, []);
+
+    //==== inilize formik data ================\\
+
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            country: "",
+            phone: "",
+            message: "",
+        },
+        onSubmit: async (values) => {
+            try {
+                setIsSubmitting(true);
+                const res = await apiJson.post("/api/Website/userContectAdd", values);
+                if (res?.status === 200) {
+                    setIsSubmitting(false);
+                    toast.success(res?.data?.message);
+                    formik.resetForm();
+                }
+            } catch (error) {
+                setIsSubmitting(false);
+                toast.error(error?.response?.data?.message);
+            }
+        },
+    })
     return (
         <>
             <GotoTop />
@@ -71,12 +128,15 @@ const ContactUs = () => {
                             <h2 className="text-3xl font-bold mb-2">Contact Information</h2>
                             <p className="text-gray-600 mb-8">Say something to start a live chat!</p>
 
-                            <form className="space-y-6">
+                            <form onSubmit={formik.handleSubmit} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
                                         <label className="block text-sm text-gray-600 mb-2">Name</label>
                                         <input
+                                            value={formik.values?.name}
+                                            onChange={formik.handleChange}
                                             type="text"
+                                            name='name'
                                             placeholder="Jon Doe"
                                             className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F]  focus:outline-none focus:ring-1 focus:ring-secondary"
                                         />
@@ -84,6 +144,9 @@ const ContactUs = () => {
                                     <div>
                                         <label className="block text-sm text-gray-600 mb-2">Email</label>
                                         <input
+                                            name='email'
+                                            value={formik.values?.email}
+                                            onChange={formik.handleChange}
                                             type="email"
                                             placeholder="9kPmB@example.com"
                                             className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
@@ -94,24 +157,42 @@ const ContactUs = () => {
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
                                         <label className="block text-sm text-gray-600 mb-2">Country</label>
-                                        <select
-                                            name="topic"
-                                            required
-                                            className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary appearance-none hover:cursor-pointer"
-                                            style={{ WebkitAppearance: 'none' }}
-                                        >
-                                            <option value="" disabled>Select country*</option>
-                                            <option value="new-features">India</option>
-                                            <option value="muslim-films">UK</option>
-                                            <option value="tv-series">US</option>
-                                        </select>
+                                        <Select
+                                            options={countries}
+                                            styles={customStyles}
+                                            placeholder={loading ? "Loading..." : "Select country*"}
+                                            value={countries?.find((item) => item?.value === formik?.values?.country) || null}
+                                            onChange={(selected) => {
+                                                formik.setFieldValue('country', selected?.name);
+                                            }}
+                                            className="basic-single"
+                                            classNamePrefix="select"
+                                            isClearable
+                                            getOptionLabel={
+                                                (option) => {
+                                                    return (
+                                                        <>
+                                                            <div className='flex'>
+                                                                <div>
+                                                                    <img src={option?.flag} alt={option?.name} className='h-6 w-6 object-contain mr-3' />
+                                                                </div>
+                                                                <span className='spanColor'>{option?.name}</span>
+                                                            </div>
+                                                        </>
+                                                    )
+                                                }
+                                            }
+                                        />
                                     </div>
                                     <div>
                                         <label className="block text-sm text-gray-600 mb-2">Phone Number</label>
                                         <input
+                                            name='phone'
+                                            value={formik.values?.phone}
+                                            onChange={formik.handleChange}
                                             type="text"
                                             placeholder="+91 787576****"
-                                            className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
+                                            className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
                                         />
                                     </div>
                                 </div>
@@ -119,6 +200,9 @@ const ContactUs = () => {
                                 <div>
                                     <label className="block text-sm text-gray-600 mb-2">Message</label>
                                     <textarea
+                                        name='message'
+                                        value={formik.values?.message}
+                                        onChange={formik.handleChange}
                                         rows="4"
                                         placeholder="Write your message here..."
                                         className="w-full p-3 rounded-lg  bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
@@ -128,6 +212,7 @@ const ContactUs = () => {
                                 <div className="flex justify-between items-center">
 
                                     <button
+                                        disabled={isSubmitting}
                                         type="submit"
                                         className="bg-green-900 text-white px-8 py-3 rounded-md hover:bg-green-800 transition-colors"
                                     >
@@ -145,3 +230,44 @@ const ContactUs = () => {
 }
 
 export default ContactUs
+// Custom styles for react-select
+const customStyles = {
+    control: (base) => ({
+        ...base,
+        backgroundColor: "white",
+        borderColor: "#07645F",
+        borderWidth: "2px",
+        borderRadius: "0.5rem",
+        padding: "6px",
+        boxShadow: "none",
+        "&:hover": {
+            borderColor: "#07645F",
+        },
+    }),
+    placeholder: (base) => ({
+        ...base,
+        color: "black",
+    }),
+    singleValue: (base) => ({
+        ...base,
+        color: "#333",
+    }),
+    dropdownIndicator: (base) => ({
+        ...base,
+        color: "#07645F",
+    }),
+    menu: (base) => ({
+        ...base,
+        borderRadius: "0.5rem",
+        border: "1px solid #07645F",
+        zIndex: 10,
+    }),
+    option: (base, { isFocused, isSelected }) => ({
+        ...base,
+        backgroundColor: isFocused ? "#F1F9F8" : "white",
+        color: isSelected ? "#07645F" : "black",
+        "&:active": {
+            backgroundColor: "#E6F4F3",
+        },
+    }),
+};

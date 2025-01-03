@@ -9,8 +9,11 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import CourseTracks from '../components/CourseTracks';
 import { Link } from 'react-router-dom';
 import GotoTop from '../components/reusebleComp/GotoTop';
+import { toast } from 'react-toastify';
 const Home = () => {
   const [allahNameList, setAllahNameList] = useState([])
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const marqueeRef = useRef(null);
 
   const handleMouseOver = () => {
@@ -34,12 +37,27 @@ const Home = () => {
       console.log(error)
     }
   }
+
+  //==========Function to subscribe newsletter ===========\\
+  const subscribeNewsletter = async () => {
+    try {
+      const res = await apiJson.post("/api/Website/userSubscribe", { name, email });
+      if (res?.status === 200) {
+        toast.success(res?.data?.message);
+        setName("");
+        setEmail("");
+      }
+    } catch (error) {
+      console.log(error?.response?.data?.message);
+      toast.error(error?.response?.data?.message);
+    }
+  }
   useEffect(() => {
     getAllahName()
   }, [])
   return (
     <>
-    <GotoTop />
+      <GotoTop />
       <div className="mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[90vh]  bg-no-repeat bg-cover bg-left md:bg-bottom" style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
         <div className="max-w-2xl flex flex-col ">
           <h1 className="text-5xl font-bold mb-6">
@@ -47,7 +65,7 @@ const Home = () => {
             <br />
             Seamlessly
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-para text-base">
             Empower your faith with DeenBytes App—offering Quran tools, prayer alerts, kids' games, and more.
           </p>
           <Link to='/about'>
@@ -105,7 +123,7 @@ const Home = () => {
               <h1 className="text-4xl md:text-5xl font-bold">
                 About <span className="text-green-500">Application</span>
               </h1>
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-4 text-para text-base">
                 <p>
                   Welcome to DeenBytes, your trusted companion in enhancing your Islamic lifestyle through cutting-edge technology. Our mission is to empower Muslims worldwide with tools that simplify religious practices, deepen spiritual understanding, and foster a strong connection with Islam.
                 </p>
@@ -121,7 +139,8 @@ const Home = () => {
         </div>
         <Slider />
         {/*========== Quran Section start here ============  */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#CDF3D3] h-full lg:h-[636px]">
+     <div className='bg-[#CDF3D3]'>
+        <div className="grid grid-cols-1 lg:grid-cols-2  h-full lg:h-[636px]  lg:max-w-7xl lg:mx-auto">
           {/* Right Content - App Screenshots */}
           <div className="relative flex items-end justify-center order-last lg:order-last mb:0 pt-4 px-4 md:px-2 md:pt-0">
             {/* Main Screenshot */}
@@ -138,26 +157,27 @@ const Home = () => {
               <span className="text-black">AL-</span>
               <span className="text-green-500">Quran</span>
             </h1>
-            <p className="text-gray-600 mb-4 text-base">
+            <p className="text-para mb-4 text-base">
               Al-Quran with DeenBytes: Your Ultimate Guide to Understanding the Divine Message.
             </p>
-            <p className="text-gray-600 mb-4 text-base">
+            <p className="text-para mb-4 text-base">
               The Quran is the eternal guidance for Muslims, offering profound wisdom, spiritual enrichment, and moral direction. At DeenBytes, we aim to make the Quran accessible, easy to read, and listen to for Muslims worldwide. Whether you’re seeking to deepen your understanding, memorize verses, or simply stay connected to Allah’s words, our app provides everything you need in one convenient platform.
             </p>
-            <p className="text-gray-600 mb-4 text-base">Download DeenBytes now and experience the Quran like never before. Let us be your trusted companion in your journey of faith.</p>
+            <p className="text-para mb-4 text-base">Download DeenBytes now and experience the Quran like never before. Let us be your trusted companion in your journey of faith.</p>
             <button className="w-fit px-8 py-3 mt-4 border-2 border-green-600 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
               Get Started
             </button>
           </div>
         </div>
+        </div>
         {/*========== Quran Section End here ============  */}
         {/*========== Free Features Section start here ============  */}
-        <div className="relative bg-[#EBFFF1] py-8 ">
+        <div className="relative bg-[#EBFFF1] py-8 md:max-w-7xl md:mx-auto ">
           <div className="mx-2">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-2">
               Free Features
             </h1>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-para mb-8">
               These services are designed to make practicing Islam easier and more accessible for everyone.
             </p>
             <Swiper
@@ -205,12 +225,12 @@ const Home = () => {
         </div>
         {/*========== Free Features Section End here ============  */}
         {/* kids learning secton start here */}
-        <div className="relative">
+        <div className="relative flex items-center justify-center ">
           <img
             src="./assets/kidslearning.jpg"
             srcset="./assets/kidsLearningMobile.png 480w, ./assets/kidsLearningTab.png 768w, ./assets/kidslearning.jpg 1440w"
             alt="deenBytes kids learning"
-            width="1440" height="800" />
+            width="auto" height="800" />
         </div>
 
         {/* Course section start here  */}
@@ -233,7 +253,7 @@ const Home = () => {
 
           {/* Form section */}
           <div className="px-4 py-8 md:py-12">
-            <div className="max-w-xl mx-auto bg-[#9ee4a8] rounded-xl p-6 md:p-8 shadow-xl border-2 border-info text-center">
+            <div className="max-w-5xl mx-auto bg-[#9ee4a8] rounded-xl p-6 md:p-8 shadow-xl border-2 border-info text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-[#024c2d] mb-2">
                 Subscribe to Our Newsletter!
               </h2>
@@ -242,27 +262,34 @@ const Home = () => {
               </p>
 
               <form className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="firstName"
-                    placeholder="Name"
-                    required
-                    className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] shadow-md focus:outline-none focus:ring-2 focus:ring-secondary"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address *"
-                    required
-                    className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-2 focus:ring-secondary"
-                  />
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Name"
+                      required
+                      className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] shadow-md focus:outline-none focus:ring-1 focus:ring-secondary"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email Address *"
+                      required
+                      className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
+                    />
+                  </div>
                 </div>
                 <button
-                  type="submit"
+                  type="button"
                   className="w-32 py-3 px-8 bg-secondary hover:bg-primary text-white rounded-full transition-colors duration-200"
+                  onClick={subscribeNewsletter}
                 >
                   Subscribe
                 </button>

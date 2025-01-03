@@ -23,7 +23,7 @@ const About = () => {
   ]
   return (
     <>
-    <GotoTop />
+      <GotoTop />
       <div className="relative">
         {/* ======== Top about banner start here👇👇👇 ============== */}
         <div
@@ -35,21 +35,20 @@ const About = () => {
 
           {/* Content */}
           <div className="absolute inset-0 flex justify-center items-center flex-col text-center max-w-2xl mx-auto">
-            <h1 className="text-4xl md:text-5xl text-white font-bold mb-6">
-              The <span className="text-[#B2F01F]">Smart</span>
-              <br />
-              Choice For <span className="text-[#B2F01F]">Future</span>
+            <h1 className="text-3xl md:text-5xl text-white font-bold mb-1">
+            Where <span className="text-[#B2F01F]">Faith Meets Technology</span>
             </h1>
+            <h1 className="text-3xl md:text-5xl text-white font-bold mb-6">for <span className="text-[#B2F01F]">Muslims Worldwide</span></h1>
             <div className="text-white text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque pariatur sunt repellat eum, doloremque quisquam temporibus delectus in perferendis cupiditate hic minima ipsa qui consequatur natus beatae ipsam praesentium nam.
+            In this world of technology, there are Muslims who are ready to incorporate their beliefs with the modern ways and devices. This exposition entails an area whereby ancient principles of Islam are married to the newest technologies in order to enable believers execute their religion in the era of devices. Muslims Worldwide
             </div>
           </div>
         </div>
         {/* ======== Objective Application section start here👇👇👇 ============== */}
 
-        <div className="relative my-10 md:my-10 max-w-6xl md:mx-auto mx-4">
-          <h1 className="text-3xl md:text-5xl font-bold text-center mb-5">
-            Objective <span className="text-green-500">Application</span>
+        <div className="relative my-10  max-w-6xl md:mx-auto mx-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">
+            Objective <span className="text-green-500 ">Application</span>
           </h1>
           <p className='text-base text-left mb-3 text-para'><span className='font-bold text-black'>Enhance Accessibility:</span> We are committed to making DeenBytes accessible to Muslims everywhere, ensuring that our app is available across various devices and platforms. Our goal is to break down barriers and provide an inclusive experience for all users.
           </p>
@@ -107,11 +106,11 @@ const About = () => {
               <div className="flex-grow h-[4px] bg-gradient-to-l from-transparent to-[#538971]"></div>
             </div>
             <p className="text-para leading-relaxed mt-10 md:mt-14 mb-8">
-              Elsern is a global training provider based across the UK that specialises in accredited and bespoke training courses. We crush theElsern is a global training provider based across the UK that specialises in accredited and bespoke training courses. We crush theElsern is a global training provider based across the UK
+            The dedicated team for DeeenBytes include team members with a deeper understanding of Islamic values, technical expertise, and a passion for innovation.
             </p>
           </div>
 
-          <div className="relative  mt-5 flex justify-center items-center">
+          <div className="relative max-w-6xl mx-4 md:mx-auto  mt-5 flex justify-center items-center">
             <img
               className='w-full md:w-auto object-contain'
               src="./assets/teamLg.png"
