@@ -35,7 +35,7 @@ const [courses,setCourses] = useState([])
             </div>
 
             <div className="overflow-x-auto scrollbar-hide">
-                <div className="grid grid-flow-col md:grid-cols-2 lg:grid-cols-3 auto-cols-[minmax(300px,_1fr)] gap-6 sm:gap-8 mb-5 snap-x snap-mandatory">
+                <div className="grid grid-flow-col md:grid-cols-2 lg:grid-cols-3 auto-cols-[minmax(300px,_1fr)] gap-6 sm:gap-8 mb-5 snap-x snap-mandatory ">
                     {courses?.length <= 0 ? (
                         Array.from({ length: 3 }).map((_, index) => (
                             <CourseCardPlace key={index} />
@@ -47,11 +47,6 @@ const [courses,setCourses] = useState([])
                     )}
 
                 </div>
-            </div>
-            <div className="flex justify-center items-center mb-4 mt-4 sm:mb-4">
-                <button className="text-sm sm:text-base bg-secondary py-3 px-6 rounded-full text-white hover:text-white font-semibold">
-                    View all
-                </button>
             </div>
 
         </div>

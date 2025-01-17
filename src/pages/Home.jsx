@@ -59,18 +59,24 @@ const Home = () => {
     <>
       <GotoTop />
       <div className="mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[90vh]  bg-no-repeat bg-cover bg-left md:bg-bottom" style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
-        <div className="max-w-2xl flex flex-col ">
+        <div id="section1" className="max-w-2xl flex flex-col">
           <h1 className="text-5xl font-bold mb-6">
-            Connect with <span className="text-secondary">Islam</span>
+            Connect with <span className="text-[#066530]">Islam</span>
             <br />
             Seamlessly
           </h1>
-          <p className="text-para text-base">
+          <p className="text-[#292929] text-base font-semibold mt-4 ">
             Empower your faith with DeenBytes App—offering Quran tools, prayer alerts, kids' games, and more.
           </p>
-          <Link to='/about'>
-            <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl'>Explore More</button>
-          </Link>
+          <h2 className='font-bold text-xl text-[#292929] mt-5'>Get the App</h2>
+          <div className='flex gap-5 mt-3'>
+            <a href="https://play.google.com/store/apps/details?id=com.blessedventures.deenbytes" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/kids/google-play-app-store.png" alt="Get it on Google Play deenbytes" className="w-full h-full object-contain animate-zoomIn" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.deenbytes.deenbytes" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/kids/applestore.png" alt="Get it on App store deenbytes" className="w-full h-full object-contain animate-zoomIn" />
+            </a>
+          </div>
         </div>
       </div>
       <div className="min-h-screen bg-[#ebfff1] ">
@@ -104,17 +110,7 @@ const Home = () => {
               <div className='flex justify-center items-center'>
                 <img src="./assets/mobile.png" alt="DeenBytesApps" className="w-3/4 md:w-2/4  h-3/4 md:h-2/4 object-contain" />
               </div>
-              {/* Google Play Button */}
-              <a
-                href="/"
-                className="block w-40 mt-8 transform translate-x-16 relative bottom-3 left-8 md:bottom-24 md:left-6"
-              >
-                <img
-                  src="./assets/playstore.png"
-                  alt="Get it on Google Play deenbytes"
-                  className="h-3/4 w-3/4 md:w-full md:h-full object-contain"
-                />
-              </a>
+              
             </div>
 
 
@@ -139,36 +135,36 @@ const Home = () => {
         </div>
         <Slider />
         {/*========== Quran Section start here ============  */}
-     <div className='bg-[#CDF3D3]'>
-        <div className="grid grid-cols-1 lg:grid-cols-2  h-full lg:h-[636px]  lg:max-w-7xl lg:mx-auto">
-          {/* Right Content - App Screenshots */}
-          <div className="relative flex items-end justify-center order-last lg:order-last mb:0 pt-4 px-4 md:px-2 md:pt-0">
-            {/* Main Screenshot */}
-            <img
-              src="../assets/QuranImage.png"
-              alt="Quran Deenbyte App"
-              className="w-full h-full md:h-[570px] object-contain"
-            />
-          </div>
+        <div className='bg-[#CDF3D3]'>
+          <div className="grid grid-cols-1 lg:grid-cols-2  h-full lg:h-[636px]  lg:max-w-7xl lg:mx-auto">
+            {/* Right Content - App Screenshots */}
+            <div className="relative flex items-end justify-center order-last lg:order-last mb:0 pt-4 px-4 md:px-2 md:pt-0">
+              {/* Main Screenshot */}
+              <img
+                src="../assets/QuranImage.png"
+                alt="Quran Deenbyte App"
+                className="w-full h-full md:h-[570px] object-contain"
+              />
+            </div>
 
-          {/* Left Content */}
-          <div className="flex flex-col justify-center pt-9 px-8 md:px-16 lg:px-24">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-              <span className="text-black">AL-</span>
-              <span className="text-green-500">Quran</span>
-            </h1>
-            <p className="text-para mb-4 text-base">
-              Al-Quran with DeenBytes: Your Ultimate Guide to Understanding the Divine Message.
-            </p>
-            <p className="text-para mb-4 text-base">
-              The Quran is the eternal guidance for Muslims, offering profound wisdom, spiritual enrichment, and moral direction. At DeenBytes, we aim to make the Quran accessible, easy to read, and listen to for Muslims worldwide. Whether you’re seeking to deepen your understanding, memorize verses, or simply stay connected to Allah’s words, our app provides everything you need in one convenient platform.
-            </p>
-            <p className="text-para mb-4 text-base">Download DeenBytes now and experience the Quran like never before. Let us be your trusted companion in your journey of faith.</p>
-            <button className="w-fit px-8 py-3 mt-4 border-2 border-green-600 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
-              Get Started
-            </button>
+            {/* Left Content */}
+            <div className="flex flex-col justify-center pt-9 px-8 md:px-16 lg:px-24">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                <span className="text-black">AL-</span>
+                <span className="text-green-500">Quran</span>
+              </h1>
+              <p className="text-para mb-4 text-base">
+                Al-Quran with DeenBytes: Your Ultimate Guide to Understanding the Divine Message.
+              </p>
+              <p className="text-para mb-4 text-base">
+                The Quran is the eternal guidance for Muslims, offering profound wisdom, spiritual enrichment, and moral direction. At DeenBytes, we aim to make the Quran accessible, easy to read, and listen to for Muslims worldwide. Whether you’re seeking to deepen your understanding, memorize verses, or simply stay connected to Allah’s words, our app provides everything you need in one convenient platform.
+              </p>
+              <p className="text-para mb-4 text-base">Download DeenBytes now and experience the Quran like never before. Let us be your trusted companion in your journey of faith.</p>
+              <button className="w-fit px-8 py-3 mt-4 border-2 border-green-600 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
+                Get Started
+              </button>
+            </div>
           </div>
-        </div>
         </div>
         {/*========== Quran Section End here ============  */}
         {/*========== Free Features Section start here ============  */}
@@ -202,6 +198,7 @@ const Home = () => {
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index} className="custom-slide cursor-pointer hover:transform hover:scale-105 transition-transform duration-300">
+                   <Link to={`/features?id=${slide.id}`}>
                   <div className="card">
                     <div className="custom-img-container">
                       <img src={slide.image} alt={slide.title} className='object-contain' />
@@ -217,6 +214,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                  </Link>
                 </SwiperSlide>
 
               ))}
@@ -224,13 +222,33 @@ const Home = () => {
           </div>
         </div>
         {/*========== Free Features Section End here ============  */}
-        {/* kids learning secton start here */}
-        <div className="relative flex items-center justify-center ">
-          <img
-            src="./assets/kidslearning.jpg"
-            srcset="./assets/kidsLearningMobile.png 480w, ./assets/kidsLearningTab.png 768w, ./assets/kidslearning.jpg 1440w"
-            alt="deenBytes kids learning"
-            width="auto" height="800" />
+
+  
+        {/*=============== kids learning secton start here👇👇👇👇👇 ============ */}
+        <div className="relative">
+          <div className="hidden md:block">
+            <img
+              src="./assets/kidbg.png"
+              alt="deenBytes kids learning"
+              className='w-full  md:h-[550px] object-cover'
+            />
+          </div>
+          <div className="relative md:absolute flex justify-center items-center flex-col md:flex-row  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 w-full px-5 md:px-14">
+          <div className='w-full flex justify-center items-center md:w-1/2 '>
+              <img src="./assets/childs.png" alt="childs"  className='h-3/4 w-3/4 md:h-full md:w-full xl:h-[400px] xl:w-[400px] object-contain '/>
+          </div>
+          <div className='w-full md:w-1/2 flex flex-col px-4 md:px-0 items-center md:items-start'>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6  mt-3 md:mt-0">
+          Kids <span className="text-[#178753]">Learning</span>
+          </h1>
+          <p className="text-para mb-4 text-base text-center md:text-left"> At DeenBytes, we believe that instilling Islamic values in children should be both engaging and enjoyable. Our app offers interactive and educational tools designed specifically for kids to help them learn about Islam in a fun and memorable way.</p>
+          <Link to={'/kids'}>
+          <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl flex'>Learn more</button>
+          </Link>
+          </div>
+
+          </div>
+
         </div>
 
         {/* Course section start here  */}
@@ -310,66 +328,77 @@ const Home = () => {
 export default Home
 const slides = [
   {
+    id: 1,
     image: "./assets/features/Prayer Time.png?height=200&width=200",
     title: "Prayer Time",
     altText: "Prayer Time Deenbytes",
     description: "Access accurate Salah timings based on your current location. Receive customizable alerts for all five daily prayers. Stay punctual and enhance your prayer routine effortlessly."
   },
   {
+    id: 2,
     image: "./assets/features/qibla.png?height=200&width=200",
     title: "Qibla",
     altText: "Qibla Deenbytes",
     description: "Find the direction of the Kaaba easily with our GPS-enabled Qibla compass. Ensure you face the right way while praying anywhere in the world. Experience peace of mind knowing you're aligned correctly."
   },
   {
+    id: 3,
     image: "./assets/features/tasbih.png?height=200&width=200",
     title: "Tasbih",
     altText: "Tasbih Deenbytes",
     description: "Utilize a digital Tasbih counter to track your Dhikr effortlessly. Perfect for daily remembrance of Allah, it enhances your spiritual connection. Keep your focus on worship with this simple tool."
   },
   {
+    id: 4,
     image: "./assets/features/Find Mosque.png?height=200&width=200",
     title: "Find Mosque",
     altText: "Find Mosque Deenbytes",
     description: "Quickly locate nearby mosques and prayer spaces wherever you are. The app helps you connect with your community and pray in congregation. Never miss an opportunity to join fellow Muslim worshippers."
   },
   {
+    id: 5,
     image: "./assets/features/Dua.png?height=200&width=200",
     title: "Duas",
     altText: "Duas Deenbytes",
     description: "Access a vast library of Duas for every occasion with Arabic text, transliteration, and translation. Deepen your understanding and enhance your spiritual practice. Utilize these supplications for guidance and support."
   },
   {
+    id: 6,
     image: "./assets/features/Quran.png?height=200&width=200",
     title: "Quran",
     altText: "Quran Deenbytes",
     description: "Read and listen to the Quran with available translations and Tafsir. Enjoy high-quality recitations by renowned Qaris to elevate your experience. Connect with the divine words of Allah in a meaningful way."
   },
   {
+    id: 7,
     image: "./assets/features/allah-name.png?height=200&width=200",
     title: "99 Names",
     altText: "99 Names Deenbytes",
     description: "Explore the beautiful names of Allah, complete with meanings and benefits for recitation. Deepen your appreciation for the divine attributes through study and reflection. Enrich your spiritual practice by integrating these names into your worship."
   },
   {
+    id: 8,
     image: "./assets/features/Zakat.png?height=200&width=200",
     title: "Zakat",
     altText: "Zakat Deenbytes",
     description: "Accurately calculate your Zakat obligations with user-friendly tools. Simplify the process of fulfilling your charitable responsibilities. Ensure your giving aligns with Islamic principles and improves your community."
   },
   {
+    id: 9,
     image: "./assets/features/Makkah live.png?height=200&width=200",
     title: "Makkah Live",
     altText: "Makkah Live Deenbytes",
     description: "Stream live from Masjid al-Haram in Makkah for a spiritually uplifting experience. Stay connected to the heart of Islam anytime, anywhere. Feel the presence of the sacred atmosphere right from your home."
   },
   {
+    id: 10,
     image: "./assets/features/Calender.png?height=200&width=200",
     title: "Calendar",
     altText: "Calendar Deenbytes",
     description: "Track Islamic events and important dates like Ramadan and Eid easily. Stay informed about Hijri dates to honor significant occasions in your faith. Organize your Islamic practices effortlessly throughout the year."
   },
   {
+    id: 11,
     image: "./assets/features/Quran.png?height=200&width=200",
     title: "Prayer Tracker",
     altText: "Prayer Tracker Deenbytes",

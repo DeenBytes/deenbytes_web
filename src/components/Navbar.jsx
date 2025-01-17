@@ -64,9 +64,11 @@ const Navbar = () => {
                             )}
                         </li>
                     ))}
-                    <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium ">
-                        Download
+                   <Link to={'/'} >
+                    <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium md:hidden lg:block">
+                    Download
                     </button>
+                    </Link>
                     <div className="text-primary flex justify-center items-center">
 
                     <FaUserCircle  size={30}/>
@@ -89,7 +91,7 @@ const Navbar = () => {
                                 <div key={item?.id}>
                                     <Link
                                         to={item?.link}
-                                        className={`text-secondary hover:text-gray-200 px-3 py-2 flex items-center justify-center my-4 gap-1 rounded-md transition-all duration-300 ease-in-out relative ${location.pathname === item?.link ? "bg-primary font-bold text-center text-white" : ""
+                                        className={`text-secondary hover:text-gray-200 font-semibold px-3 py-2 flex items-center justify-center my-4 gap-1 rounded-md transition-all duration-300 ease-in-out relative ${location.pathname === item?.link ? "bg-primary font-bold text-center text-white" : ""
                                             } underline-stroke`}
                                         onClick={() => (item?.subMenu ? toggleSubmenu(item?.id) : toggleMenu())}
                                     >
@@ -177,18 +179,13 @@ const MenuItems = [
     {
         id: 4,
         name: "Kids",
-        link: "/kid",
+        link: "/kids",
 
     },
     {
         id: 5,
         name: "Live Session",
         link: "/live-session",
-    },
-    {
-        id: 6,
-        name: "Premium",
-        link: "/premium"
     },
 
 ];

@@ -116,4 +116,19 @@ body {
 color:#4caf50;
   padding: 10px;
 }
+.livesession::-webkit-scrollbar {
+  width: 6px;
+}
 
+.livesession::-webkit-scrollbar-button {
+  display: none;
+}
+
+.livesession::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+.livesession::-webkit-scrollbar-thumb {
+  background: #228130; /* Scrollbar thumb color */
+  border-radius: 3px; /* Optional: Rounded corners */
+}

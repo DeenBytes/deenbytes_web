@@ -4,9 +4,10 @@ import { FaInstagram,FaTwitter,FaYoutube,FaLinkedinIn } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 // #0f1923
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
         <footer className="bg-[#043232] text-white py-8 px-4 font-sans">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-12 sm:gap-8 md:gap-10">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-12 sm:gap-8 md:gap-10">
                 {/* Who We Are Section */}
                 <div className="space-y-4 md:col-span-2">
                     <h3 className="text-lg font-medium mt-2">Who We Are</h3>
@@ -29,7 +30,8 @@ const Footer = () => {
                 <div className="space-y-4 md:col-span-4">
                     <h3 className="text-lg font-medium mt-2">Address</h3>
                     <p className="text-gray-400">
-                        <span className="font-bold text-white">RegOffice :</span> Office 43-44, Al Fahidi, Bur Dubai, Dubai, United Arab Emirates
+                        <span className="font-bold text-white">Registered
+                        Office :</span> Office 43-44, Al Fahidi, Bur Dubai, Dubai, United Arab Emirates
                     </p>
                     <p className="text-gray-400">
                         <span className="font-bold text-white">Email :</span> <a href="mailto:support@deenbytes.com">support@deenbytes.com</a>
@@ -57,7 +59,7 @@ const Footer = () => {
                         <Link to="https://x.com/Deenbytes" aria-label="Twitter" className="h-9 w-9 border border-white bg-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaTwitter className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
-                        <Link to="https://www.youtube.com/@DeenBytes_Islamic" aria-label="YouTube" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
+                        <Link to="https://www.youtube.com/@DeenBytesofficial" aria-label="YouTube" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaYoutube ube className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
                         <Link to="https://www.linkedin.com/company/deenbytes/" aria-label="LinkedIn" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
@@ -66,7 +68,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-between flex-col md:flex-row mt-7 pt-8 border-t border-gray-800">
+            <div className="flex justify-between flex-col md:flex-row mt-7 pt-8 border-t border-gray-800 max-w-6xl mx-auto">
                 <div className="flex flex-wrap justify-center gap-4">
                     <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Help Center</Link>
                     <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Cookies Policy</Link>
@@ -75,7 +77,7 @@ const Footer = () => {
                     <Link to="/" className="text-sm text-gray-400 hover:text-white transition-colors">Disclaimer</Link>
                 </div>
                 <p className="text-center text-sm text-gray-400 mt-4 md:mt-0">
-                    Copyright © 2024 Blessed Ventures CS & CSET CO. L.L.C All rights reserved.
+                    Copyright © {currentYear} Blessed Ventures CS & CSET CO. L.L.C All rights reserved.
                 </p>
             </div>
         </footer>

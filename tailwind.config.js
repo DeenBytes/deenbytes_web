@@ -2,7 +2,15 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
-     
+       animation: {
+        zoomIn: 'zoomIn 1s infinite',
+      },
+      keyframes: {
+        zoomIn: {
+          '0%': { transform: 'scale(1)' }, 
+          '100%': { transform: 'scale(1.05)' },
+        },
+      },
       colors: {
         primary: '#0C5C3A',
         secondary: '#0C5C3A',
@@ -13,7 +21,7 @@ module.exports = {
         success: '#22C55E', 
         warning: '#F59E0B',
         info:'#016B5C',
-        para:'#8A8A8A'
+        para:'#616161'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
