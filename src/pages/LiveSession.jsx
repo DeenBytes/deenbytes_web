@@ -219,7 +219,7 @@ const cards = [
   {
     id: 1,
     course_Name: "Arabic Grammar",
-    thumbnail_Image: "./assets/arabic.jpg",
+    thumbnail_Image: "./assets/Arabic.jpg",
     duration: "22hr",
     saves: "278",
     course_Description: "Master Arabic grammar online with DeenBytes’s comprehensive Arabic Grammar Course, carefully crafted to build a strong understanding of sentence structure, verb conjugation, punctuation, and more.",

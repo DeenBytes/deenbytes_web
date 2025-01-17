@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaRegClock, FaBookOpen } from "react-icons/fa";
+import { FaClock, FaBookOpen } from "react-icons/fa";
 const CourseCard = (course) => {
       const [isExpandedDesc, setIsExpandedDesc] = useState({});
     const handleToggleDesc = (id) => {
@@ -45,12 +45,12 @@ const CourseCard = (course) => {
                 </div> */}
                 <div className="flex justify-between items-center flex-row">
                     <h3 className="text-xl font-bold text-secondary mb-2 ">{course?.course_Name}</h3>
-                    <div className="flex flex-col text-sm text-gray-500 gap-2">
-                        <div className="flex items-center gap-1">
-                            <FaRegClock className="w-4 h-4" />
+                    <div className="flex flex-col text-sm text-[#2c2c2c] gap-2">
+                        <div className="flex items-center gap-2">
+                            <FaClock className="w-4 h-4" />
                             <span>{course?.duration}</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-2">
                             <FaBookOpen className="w-4 h-4" />
                             <span>{course?.module} modules</span>
                         </div>
