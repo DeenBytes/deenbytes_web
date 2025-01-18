@@ -65,7 +65,7 @@ const Kids = () => {
                         <h1 className="text-2xl md:text-5xl font-bold text-white px-5">
                             Building Faith, Character, and Knowledge for <span className="text-green-400">Young Hearts.</span>
                         </h1>
-                      <p className='text-base text-white px-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, debitis?</p>
+                      <p className='text-base text-white px-5 pt-4'>A dynamic platform crafted to introduce Islamic principles to children through enjoyable, interactive, and age-appropriate approaches.</p>
                     </div>
                 </div>
                 {/* ======== Objective Application section start here👇👇👇 ============== */}
@@ -105,16 +105,16 @@ const Kids = () => {
                                     </picture>
                                     <div className={`absolute flex gap-2 ${slide.id === 3 ? 'bottom-3 left-1/2 transform -translate-x-1/2' : 'bottom-4 right-10'}`}>
                                         <div className='flex flex-col'>
-                                            <h1 className='text-[#1a1a1a] text-base md:text-3xl font-medium mb-1 md:mb-4'>Download App</h1>
-                                            <div className='flex gap-2'>
+                                            <h1 className={`text-[#1a1a1a] text-base md:text-3xl font-medium mb-1 md:mb-4 ${slide.id === 3 ? 'text-center' : ''}`}>Download App</h1>
+                                            <div className='flex gap-5'>
 
                                                 <a href="https://play.google.com/store/apps/details?id=com.blessedventures.deenbytes" target="_blank" rel="noopener noreferrer">
                                                     <div>
-                                                        <img src="./assets/kids/google-play-app-store.png" alt="Deenbyte Playstore" className='w-18 h-7 object-contain md:w-full md:h-auto cursor-pointer' />
+                                                        <img src="./assets/kids/google-play-app-store.svg" alt="Deenbyte Playstore" className='w-18 h-7 object-contain md:w-40 md:h-14 rounded-[14px] cursor-pointer' />
                                                     </div>
                                                 </a>
                                                 <div>
-                                                    <img src="./assets/kids/applestore.png" alt="Deenbyte apple-store" className='w-18 h-7 object-contain md:w-full md:h-auto cursor-pointer' />
+                                                    <img src="./assets/kids/applestore.svg" alt="Deenbyte apple-store" className='w-18 h-7 object-contain md:w-40  md:h-14 cursor-pointer rounded-[14px]' />
                                                 </div>
                                             </div>
                                         </div>

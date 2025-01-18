@@ -1,15 +1,40 @@
 import React, { useState } from 'react';
 import { FaClock, FaBookOpen } from "react-icons/fa";
 const CourseCard = (course) => {
-      const [isExpandedDesc, setIsExpandedDesc] = useState({});
+    const [isExpandedDesc, setIsExpandedDesc] = useState({});
     const handleToggleDesc = (id) => {
         setIsExpandedDesc((prev) => ({
-          ...prev,
-          [id]: !prev[id],
+            ...prev,
+            [id]: !prev[id],
         }));
-      };
+    };
     return (
         <div className="relative w-full max-w-[450px] h-auto  bg-white rounded-xl shadow-md mx-auto">
+            <div className="relative">
+                <div className="absolute top-[-20px] left-1/2 -translate-x-1/2 z-30">
+                    <div className="relative">
+                        {/* Main green background */}
+                        <div className="bg-[#0B4B2C] text-white px-4 lg:px-6 py-3 text-base rounded-b-md font-medium shadow-[0px_4px_4px_0px_#00000060]">
+                            Coming Soon
+                        </div>
+                        {/* Left triangle */}
+                        <div
+                            className="absolute -left-5 top-0 w-5 h-5 "
+                            style={{
+                                background: 'linear-gradient(to bottom right, transparent 0%, transparent 50%, #032C1C 50%, #032C1C 100%)'
+                            }}
+                        />
+                        {/* Right triangle */}
+                        <div
+                            className="absolute -right-5 top-0 w-5 h-5"
+                            style={{
+                                background: 'linear-gradient(to bottom left, transparent 0%, transparent 50%, #032C1C 50%, #032C1C 100%)'
+                            }}
+                        />
+                    </div>
+                </div>
+
+            </div>
             <div className="relative h-48 w-full p-4">
                 <img
                     src={course?.thumbnail_Image}
@@ -58,18 +83,18 @@ const CourseCard = (course) => {
                 </div>
                 <div className="border-b-2 border-gray-200 border-dashed my-2"></div>
                 <div className="h-24 overflow-y-auto w-full my-3 livesession" >
-                      <p className="text-para text-sm md:text-base font-normal mb-4">
+                    <p className="text-para text-sm md:text-base font-normal mb-4">
                         {isExpandedDesc[course?._id]
-                          ? course?.course_Description
-                          : course?.course_Description?.slice(0, 90) + "..."}
+                            ? course?.course_Description
+                            : course?.course_Description?.slice(0, 90) + "..."}
                         <span
-                          onClick={() => handleToggleDesc(course?._id)}
-                          className="underline cursor-pointer ml-2 text-blue-600"
+                            onClick={() => handleToggleDesc(course?._id)}
+                            className="underline cursor-pointer ml-2  text-black font-semibold"
                         >
-                          {isExpandedDesc[course?._id] ? "Read less" : "Read more"}
+                            {isExpandedDesc[course?._id] ? "Read less" : "Read more"}
                         </span>
-                      </p>
-                    </div>
+                    </p>
+                </div>
             </div>
         </div>
     );

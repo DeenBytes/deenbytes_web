@@ -30,7 +30,7 @@ const Navbar = () => {
                         <li key={item?.id} className="relative">
                             <Link
                                 to={item?.link}
-                                className={`text-white text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1 rounded-md transition-all duration-300 ease-in-out  relative ${location.pathname === item?.link ? "bg-[#004D40] font-bold" : ""
+                                className={`text-white text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1  transition-all duration-300 ease-in-out font-medium relative ${location.pathname === item?.link ? "border-b-4 border-primary text-secondary font-bold" : ""
                                     } underline-stroke`}
                                 onClick={() => item?.subMenu && toggleSubmenu(item?.id)}
                             >
@@ -49,10 +49,7 @@ const Navbar = () => {
                                         <li key={subItem?.id}>
                                             <Link
                                                 to={subItem?.link}
-                                                className={`block text-base px-4 py-2 transition-all duration-500  ${location.pathname === subItem?.link
-                                                    ? "bg-[#004D40]  font-bold "
-                                                    : "hover:bg-[#004D40]"
-                                                    }`}
+                                                className={`block text-base px-4 py-2 transition-all duration-500  {location.pathname === item?.link ? "border-b-4 border-primary text-secondary font-bold" : ""}`}
                                                 onClick={() => setSubmenuOpen(null)}
                                             >
                                                 {subItem?.name}
@@ -66,7 +63,7 @@ const Navbar = () => {
                     ))}
                    <Link to={'/'} >
                     <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium md:hidden lg:block">
-                    Download
+                    Try the App
                     </button>
                     </Link>
                     <div className="text-primary flex justify-center items-center">

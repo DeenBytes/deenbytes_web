@@ -4,8 +4,7 @@ import Slider from '../components/Slider'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import "swiper/css/navigation";
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import CourseTracks from '../components/CourseTracks';
 import { Link } from 'react-router-dom';
 import GotoTop from '../components/reusebleComp/GotoTop';
@@ -58,7 +57,8 @@ const Home = () => {
   return (
     <>
       <GotoTop />
-      <div className="mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[90vh]  bg-no-repeat bg-cover bg-left md:bg-bottom" style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
+      <div className="mx-auto flex items-center px-10 relative w-full h-[65vh] md:h-[80vh] 2xl:h-[70vh]  bg-no-repeat bg-cover bg-left  md:bg-center xl:bg-center " style={{ backgroundImage: `url("./assets/Deenbyte Apps Banner.jpg")` }}>
+     
         <div id="section1" className="max-w-2xl flex flex-col">
           <h1 className="text-5xl font-bold mb-6">
             Connect with <span className="text-[#066530]">Islam</span>
@@ -69,12 +69,12 @@ const Home = () => {
             Empower your faith with DeenBytes App—offering Quran tools, prayer alerts, kids' games, and more.
           </p>
           <h2 className='font-bold text-xl text-[#292929] mt-5'>Get the App</h2>
-          <div className='flex gap-5 mt-3'>
+          <div className='flex gap-5 mt-5'>
             <a href="https://play.google.com/store/apps/details?id=com.blessedventures.deenbytes" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/kids/google-play-app-store.png" alt="Get it on Google Play deenbytes" className="w-full h-full object-contain animate-zoomIn" />
+              <img src="./assets/kids/google-play-app-store.svg" alt="Get it on Google Play deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain animate-zoomIn" />
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.deenbytes.deenbytes" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/kids/applestore.png" alt="Get it on App store deenbytes" className="w-full h-full object-contain animate-zoomIn" />
+              <img src="./assets/kids/applestore.svg" alt="Get it on App store deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain animate-zoomIn" />
             </a>
           </div>
         </div>
@@ -100,7 +100,7 @@ const Home = () => {
               </span>
             ))}
           </marquee>
-        </div>
+        </div> 
 
         {/* ===========  Main Content ======== */}
         <div className="container mx-auto px-4 py-12 md:py-20">
@@ -110,7 +110,7 @@ const Home = () => {
               <div className='flex justify-center items-center'>
                 <img src="./assets/mobile.png" alt="DeenBytesApps" className="w-3/4 md:w-2/4  h-3/4 md:h-2/4 object-contain" />
               </div>
-              
+
             </div>
 
 
@@ -160,9 +160,11 @@ const Home = () => {
                 The Quran is the eternal guidance for Muslims, offering profound wisdom, spiritual enrichment, and moral direction. At DeenBytes, we aim to make the Quran accessible, easy to read, and listen to for Muslims worldwide. Whether you’re seeking to deepen your understanding, memorize verses, or simply stay connected to Allah’s words, our app provides everything you need in one convenient platform.
               </p>
               <p className="text-para mb-4 text-base">Download DeenBytes now and experience the Quran like never before. Let us be your trusted companion in your journey of faith.</p>
+              <Link to='/features'>
               <button className="w-fit px-8 py-3 mt-4 border-2 border-green-600 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
                 Get Started
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -179,7 +181,9 @@ const Home = () => {
             <Swiper
               slidesPerView={1}
               spaceBetween={20}
-              centeredSlides={false}
+              pagination={{
+                clickable: true,
+              }}
               autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,
@@ -192,38 +196,37 @@ const Home = () => {
                   slidesPerView: 3.25,
                 },
               }}
-              navigation={true}
-              modules={[Autoplay, Navigation]}
+              modules={[Autoplay, Pagination]}
               className="mySwiper custom-swiper"
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index} className="custom-slide cursor-pointer hover:transform hover:scale-105 transition-transform duration-300">
-                   <Link to={`/features?id=${slide.id}`}>
                   <div className="card">
                     <div className="custom-img-container">
-                      <img src={slide.image} alt={slide.title} className='object-contain' />
+                      <img src={slide.image} alt={slide.title} className="object-contain" />
                     </div>
-                    <div className="content-container md:px-6">
-                      <div className='relative top-12 md:top-24 pb-4 lg:p-5'>
-                        <h3 className="text-xl font-semibold text-center mb-4 md:mt-3 text-[#1b5e20]">
-                          {slide.title}
-                        </h3>
-                        <p className="text-gray-600 text-center text-sm leading-relaxed">
-                          {slide.description}
-                        </p>
+                    <Link to={`/features?id=${slide.id}`}>
+                      <div className="content-container md:px-6 ">
+                        <div className="relative top-12 md:top-24 pb-4 lg:p-5">
+                          <h3 className="text-xl font-semibold text-center mb-4 md:mt-3 text-[#1b5e20]">
+                            {slide.title}
+                          </h3>
+                          <p className="text-gray-600 text-center text-sm leading-relaxed">
+                            {slide.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
-                  </Link>
                 </SwiperSlide>
-
               ))}
             </Swiper>
+
           </div>
         </div>
         {/*========== Free Features Section End here ============  */}
 
-  
+
         {/*=============== kids learning secton start here👇👇👇👇👇 ============ */}
         <div className="relative">
           <div className="hidden md:block">
@@ -234,18 +237,18 @@ const Home = () => {
             />
           </div>
           <div className="relative md:absolute flex justify-center items-center flex-col md:flex-row  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 w-full px-5 md:px-14">
-          <div className='w-full flex justify-center items-center md:w-1/2 '>
-              <img src="./assets/childs.png" alt="childs"  className='h-3/4 w-3/4 md:h-full md:w-full xl:h-[400px] xl:w-[400px] object-contain '/>
-          </div>
-          <div className='w-full md:w-1/2 flex flex-col px-4 md:px-0 items-center md:items-start'>
-          <h1 className="text-3xl md:text-5xl font-bold mb-6  mt-3 md:mt-0">
-          Kids <span className="text-[#178753]">Learning</span>
-          </h1>
-          <p className="text-para mb-4 text-base text-center md:text-left"> At DeenBytes, we believe that instilling Islamic values in children should be both engaging and enjoyable. Our app offers interactive and educational tools designed specifically for kids to help them learn about Islam in a fun and memorable way.</p>
-          <Link to={'/kids'}>
-          <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl flex'>Learn more</button>
-          </Link>
-          </div>
+            <div className='w-full flex justify-center items-center md:w-1/2 '>
+              <img src="./assets/childs.png" alt="childs" className='h-3/4 w-3/4 md:h-full md:w-full xl:h-[400px] xl:w-[400px] object-contain ' />
+            </div>
+            <div className='w-full md:w-1/2 flex flex-col px-4 md:px-0 items-center md:items-start'>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6  mt-3 md:mt-0">
+                Kids <span className="text-[#178753]">Learning</span>
+              </h1>
+              <p className="text-para mb-4 text-base text-center md:text-left"> At DeenBytes, we believe that instilling Islamic values in children should be both engaging and enjoyable. Our app offers interactive and educational tools designed specifically for kids to help them learn about Islam in a fun and memorable way.</p>
+              <Link to={'/kids'}>
+                <button className='bg-secondary text-white w-fit px-8 py-3 mt-4 rounded-xl flex'>Learn more</button>
+              </Link>
+            </div>
 
           </div>
 
@@ -271,25 +274,25 @@ const Home = () => {
 
           {/* Form section */}
           <div className="px-4 py-8 md:py-12">
-            <div className="max-w-5xl mx-auto bg-[#9ee4a8] rounded-xl p-6 md:p-8 shadow-xl border-2 border-info text-center">
+            <div className="max-w-4xl mx-auto bg-[#9ee4a8] rounded-xl p-6 md:p-8 shadow-xl border border-info text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-[#024c2d] mb-2">
                 Subscribe to Our Newsletter!
               </h2>
-              <p className="text-[#196846] text-sm md:text-base mb-6">
+              <p className="text-[#196846] text-sm md:text-base mb-6 md:px-8">
                 Stay inspired and connected! Subscribe to our newsletter for exclusive updates on Islamic tools, prayer reminders, learning resources, and app features designed to enhance your Deen.
               </p>
 
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form className="space-y-4 max-w-sm mx-auto">
+                <div className="grid  gap-6">
                   <div>
                     <input
                       type="text"
                       name="firstName"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Name"
+                      placeholder="Enter full name"
                       required
-                      className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] shadow-md focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="w-full p-3 rounded-lg bg-white text-secondary placeholder-black-500 border border-[#d3d3d3] shadow-md focus:outline-none focus:ring-1 focus:ring-secondary"
                     />
                   </div>
                   <div>
@@ -298,15 +301,15 @@ const Home = () => {
                       name="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Email Address *"
+                      placeholder="Email Address "
                       required
-                      className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border-2 border-[#07645F] focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="w-full p-3 rounded-lg shadow-md bg-white text-secondary placeholder-black-500 border border-[#d3d3d3] focus:outline-none focus:ring-1 focus:ring-secondary mb-3"
                     />
                   </div>
                 </div>
                 <button
                   type="button"
-                  className="w-32 py-3 px-8 bg-secondary hover:bg-primary text-white rounded-full transition-colors duration-200"
+                  className="w-32 py-3 px-8 bg-secondary hover:bg-primary text-white rounded-full transition-colors duration-200 "
                   onClick={subscribeNewsletter}
                 >
                   Subscribe

@@ -51,15 +51,15 @@ export default function Slider() {
     return () => clearInterval(interval)
   }, [isAutoPlaying])
 
-  const nextSlide = () => {
-    setDirection(1)
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
+  // const nextSlide = () => {
+  //   setDirection(1)
+  //   setCurrentSlide((prev) => (prev + 1) % slides.length)
+  // }
 
-  const prevSlide = () => {
-    setDirection(-1)
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
+  // const prevSlide = () => {
+  //   setDirection(-1)
+  //   setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  // }
 
   const goToSlide = (index) => {
     setDirection(index > currentSlide ? 1 : -1)
@@ -102,7 +102,7 @@ export default function Slider() {
         </div>
 
         {/* Navigation Buttons */}
-        <button
+        {/* <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors z-20"
           aria-label="Previous slide"
@@ -115,14 +115,16 @@ export default function Slider() {
           aria-label="Next slide"
         >
           <FaChevronRight className="w-6 h-6" />
-        </button>
+        </button> */}
 
         {/* Dots Navigation */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        <div   className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
           {slides.map((_, index) => (
             <button
               key={index}
-              onClick={() => goToSlide(index)}
+              onClick={() => {
+                goToSlide(index);
+              }}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 currentSlide === index 
                   ? 'bg-white w-4' 

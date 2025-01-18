@@ -21,7 +21,7 @@ const Footer = () => {
                 <div className="space-y-4 md:col-span-2">
                     <h3 className="text-lg font-medium mt-2">What We Do</h3>
                     <ul className="space-y-1 md:space-y-2">
-                        <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Our Features</Link></li>
+                        <li><Link to="/features" className="text-gray-400 hover:text-white transition-colors">Features</Link></li>
                         <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Press Releases</Link></li>
                     </ul>
                 </div>
@@ -50,19 +50,19 @@ const Footer = () => {
                         Where Faith Meets Technology for Muslims Worldwide. DeenBytes App simplifies daily worship with advanced features like Qibla Finder, Duas, and educational content. Join DeenBytes and take a step closer to living an organized, faith-filled life.
                     </p>
                     <div className="flex flex-wrap space-x-4 gap-y-4">
-                        <Link to="https://www.facebook.com/deenBytes" aria-label="Facebook" className="h-9 w-9 border bg-white border-white rounded-lg flex justify-center items-center text-black  transition-colors">
+                        <Link to="https://www.facebook.com/deenBytes" target='_blank'  aria-label="Facebook" className="h-9 w-9 border bg-white border-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaFacebookF  className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
-                        <Link to="https://www.instagram.com/deenbytesofficial" aria-label="Instagram" className="h-9 w-9 border bg-white border-white rounded-lg flex justify-center items-center text-black  transition-colors">
+                        <Link to="https://www.instagram.com/deenbytesofficial" target='_blank' aria-label="Instagram" className="h-9 w-9 border bg-white border-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaInstagram  className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
-                        <Link to="https://x.com/Deenbytes" aria-label="Twitter" className="h-9 w-9 border border-white bg-white rounded-lg flex justify-center items-center text-black  transition-colors">
+                        <Link to="https://x.com/Deenbytes" target='_blank'  aria-label="Twitter" className="h-9 w-9 border border-white bg-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaTwitter className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
-                        <Link to="https://www.youtube.com/@DeenBytesofficial" aria-label="YouTube" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
+                        <Link to="https://www.youtube.com/@DeenBytesofficial" target='_blank'  aria-label="YouTube" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaYoutube ube className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
-                        <Link to="https://www.linkedin.com/company/deenbytes/" aria-label="LinkedIn" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
+                        <Link to="https://www.linkedin.com/company/deenbytes/" target='_blank'  aria-label="LinkedIn" className="h-9 w-9 bg-white border border-white rounded-lg flex justify-center items-center text-black  transition-colors">
                             <FaLinkedinIn fill='#000' className='h-6 w-6 hover:transform hover:scale-110 transition-transform transition-duration-300' />
                         </Link>
                     </div>

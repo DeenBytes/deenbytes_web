@@ -32,14 +32,12 @@ const LiveSession = () => {
           <div className="absolute inset-0 bg-[#084e33] opacity-80 -z-10"></div>
 
           {/* Text Content */}
-          <div className="absolute inset-0 flex justify-center items-start flex-col max-w-4xl mx-auto text-left px-6 md:px-0">
-            <h1 className="text-2xl sm:text-2xl md:text-5xl font-bold text-white leading-tight ">
-              The <span className="text-green-400">Smart</span><br /> Choice For{" "}
-              <span className="text-green-400">Future</span>
+          <div className="absolute inset-0 flex justify-center items-start flex-col max-w-6xl mx-auto text-left px-6 md:px-0">
+            <h1 className="text-2xl sm:text-2xl md:text-5xl font-bold text-white leading-tight max-w-2xl  ">        
+            Bringing Islamic Learning to Life <span className="text-[#B2F01F]"> Anytime, Anywhere.</span><br /> 
             </h1>
-            <p className="mt-4 text-white text-sm sm:text-sm max-w-xl">
-              Elearn is a global training provider based across the UK that
-              specialises in accredited and bespoke training courses. We crush the...
+            <p className="mt-4 text-white text-sm sm:text-sm font-medium max-w-xl">
+            Experience live online training focusing on Islam's essentials, offering interactive sessions on core beliefs, daily practices, and spiritual growth. 
             </p>
           </div>
         </div>
@@ -48,10 +46,10 @@ const LiveSession = () => {
         <div className='max-w-6xl relative md:mx-auto mx-4'>
           <div className="my-10 md:px-3">
             <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">
-              <span className="text-green-500 ">Objectives</span>
+            Learning <span className="text-green-500 ">Objectives</span>
             </h1>
-            <p className='text-para leading-relaxed text-base text-center mb-8'>lslamic learning for children plays a crucial role in shaping their character, worldview, and daily habits. It provides them with spiritual guidance and moral values that influence how they interact with the world and navigate life’s challenges.
-              Kids Islamic learning involves teaching children about: Faith and Belief (Aqeedah), Worship and Rituals (Ibadah), Quranic Studies, Moral and Ethical Values: Practicing honesty, kindness, patience, gratitude, and respect, Islamic History and Role Models.
+            <p className='text-para leading-relaxed text-base text-center mb-8'>The Live Islamic sessions are designed to provide a comprehensive understanding of the core tenets of Islam. These objectives aim to help participants develop a strong foundation in Islamic beliefs, practices, and values.
+            The sessions also focus on fostering spiritual growth, building strong character, and deepening personal faith, all while encouraging open discussion and personalized guidance for a more enriching learning experience.
             </p>
 
           </div>
@@ -61,7 +59,7 @@ const LiveSession = () => {
             <div className="flex justify-center items-center flex-col bg-[#D5E6DF] rounded-xl border-[2px] border-[#21674B]">
               <div className="relative w-full px-2 mb-4 md:mb-0 pt-8 md:px-12">
                 <h1 className="text-3xl md:text-5xl font-bold text-center">
-                  Objective <span className="text-green-600">Application</span>
+                Upcoming  <span className="text-green-600">Live Sessions</span>
                 </h1>
                 <div className='absolute top-10 left-[79%] '>
                   <button
@@ -93,8 +91,8 @@ const LiveSession = () => {
                       alt={card?.course_Name}
                       className="w-full h-48 px-4  py-2 mt-2 rounded-2xl"
                     />
-                    <div className="p-4 flex justify-between items-center flex-row">
-                      <h3 className="font-bold text-xl text-gray-900 mb-2">{card?.course_Name}</h3>
+                    <div className="p-4 flex   justify-between items-center flex-row">
+                      <h3 className="font-bold text-xl text-gray-900 mb-2 ">{card?.course_Name}</h3>
                       <div className="flex  flex-col text-sm text-[#2c2c2c] gap-1">
                         <div className="flex items-center gap-2">
                           <FaClock className="w-4 h-4" />
@@ -114,7 +112,7 @@ const LiveSession = () => {
                           : card?.course_Description?.slice(0, 90) + "..."}
                         <span
                           onClick={() => handleToggleDesc(card?.id)}
-                          className="underline cursor-pointer ml-2 text-blue-600"
+                          className="underline cursor-pointer ml-2 text-black font-semibold"
                         >
                           {isExpandedDesc[card?.id] ? "Read less" : "Read more"}
                         </span>
@@ -141,8 +139,8 @@ const LiveSession = () => {
 
           <div className="my-8 lg:p-8 ">
             <h1 className="text-3xl md:text-5xl font-bold text-center mb-10 sm:mb-20 md:mb-24">
-              <span className="text-slate-900">Objective </span>
-              <span className="text-emerald-500">Application</span>
+              <span className="text-slate-900">Chose your  </span>
+              <span className="text-emerald-500">mode of Learning</span>
             </h1>
 
             <div className="hidden md:grid md:grid-cols-2 gap-0 md:gap-8 md:px-3">

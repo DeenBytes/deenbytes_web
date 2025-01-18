@@ -91,8 +91,7 @@ const ContactUs = () => {
 
                             {/* Contact Information Card */}
                             <div className="bg-[#084E33] text-white p-8 rounded-b-xl">
-                                <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
-                                <p className="text-gray-300 mb-8">Say something to start a live chat!</p>
+                                <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
                                 <div className="space-y-6">
                                     <div className="flex items-center gap-4">
                                         <IoMail className="h-6 w-6 text-white" />
@@ -125,8 +124,7 @@ const ContactUs = () => {
 
                         {/* Right Column - Contact Form */}
                         <div className="p-8">
-                            <h2 className="text-3xl font-bold mb-2">Contact Information</h2>
-                            <p className="text-gray-600 mb-8">Say something to start a live chat!</p>
+                            <h2 className="text-3xl font-bold mb-2">Your details required</h2>
 
                             <form onSubmit={formik.handleSubmit} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
