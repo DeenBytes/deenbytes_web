@@ -30,7 +30,7 @@ const Navbar = () => {
                         <li key={item?.id} className="relative">
                             <Link
                                 to={item?.link}
-                                className={`text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1  transition-all duration-300 ease-in-out font-medium relative ${location.pathname === item?.link ? "border-b-4 border-primary text-secondary font-bold " : "text-white"
+                                className={`text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1  transition-all duration-300 ease-in-out relative ${location.pathname === item?.link ? "border-b-4 border-primary text-white font-bold " : "text-[#001f12] font-medium"
                                     } underline-stroke `}
                                 onClick={() => item?.subMenu && toggleSubmenu(item?.id)}
                             >
@@ -49,7 +49,7 @@ const Navbar = () => {
                                         <li key={subItem?.id}>
                                             <Link
                                                 to={subItem?.link}
-                                                className={`block text-base px-4 py-2 transition-all duration-500  {location.pathname === item?.link ? "border-b-4 border-primary text-secondary font-bold" : ""}`}
+                                                className={`block text-base px-4 py-2 transition-all duration-500  {location.pathname === item?.link ? "border-b-4 border-primary text-white font-bold" : "text-secondary font-medium"} `}
                                                 onClick={() => setSubmenuOpen(null)}
                                             >
                                                 {subItem?.name}

@@ -14,7 +14,7 @@ const CourseCard = (course) => {
                 <div className="absolute top-[-20px] left-1/2 -translate-x-1/2 z-30">
                     <div className="relative">
                         {/* Main green background */}
-                        <div className="bg-[#0B4B2C] text-white px-4 lg:px-6 py-3 text-base rounded-b-md font-medium shadow-[0px_4px_4px_0px_#00000060]">
+                        <div className="bg-[#0B4B2C] text-white px-4 lg:px-6 py-2 text-base rounded-b-md font-medium shadow-[0px_4px_4px_0px_#00000060]">
                             Coming Soon
                         </div>
                         {/* Left triangle */}
@@ -82,8 +82,9 @@ const CourseCard = (course) => {
                     </div>
                 </div>
                 <div className="border-b-2 border-gray-200 border-dashed my-2"></div>
+                    <p className='text-para text-base font-semibold '>Course Description</p>
                 <div className="h-24 overflow-y-auto w-full my-3 livesession" >
-                    <p className="text-para text-sm md:text-base font-normal mb-4">
+                    <p className="text-para text-sm font-normal mb-4">
                         {isExpandedDesc[course?._id]
                             ? course?.course_Description
                             : course?.course_Description?.slice(0, 90) + "..."}

@@ -105,8 +105,9 @@ const LiveSession = () => {
                       </div>
                     </div>
                     <div className="border-b-2 border-gray-200 border-dashed mx-5"></div>
+                    <p className='px-4 text-para text-base font-semibold mt-2'>Course Description</p>
                     <div className="px-4 h-24 overflow-y-auto w-full my-3 livesession" >
-                      <p className="text-para text-sm md:text-base font-normal mb-4">
+                      <p className="text-para text-sm  font-normal mb-4">
                         {isExpandedDesc[card?.id]
                           ? card?.course_Description
                           : card?.course_Description?.slice(0, 90) + "..."}
