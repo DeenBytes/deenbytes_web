@@ -30,8 +30,8 @@ const Navbar = () => {
                         <li key={item?.id} className="relative">
                             <Link
                                 to={item?.link}
-                                className={`text-white text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1  transition-all duration-300 ease-in-out font-medium relative ${location.pathname === item?.link ? "border-b-4 border-primary text-secondary font-bold" : ""
-                                    } underline-stroke`}
+                                className={`text-base hover:text-gray-200 px-3 py-2 flex items-center gap-1  transition-all duration-300 ease-in-out font-medium relative ${location.pathname === item?.link ? "border-b-4 border-primary text-secondary font-bold " : "text-white"
+                                    } underline-stroke `}
                                 onClick={() => item?.subMenu && toggleSubmenu(item?.id)}
                             >
                                 {item?.name}
