@@ -136,7 +136,7 @@ const Home = () => {
         <Slider />
         {/*========== Quran Section start here ============  */}
         <div className='bg-[#CDF3D3]'>
-          <div className="grid grid-cols-1 lg:grid-cols-2  h-full lg:h-[636px]  lg:max-w-7xl lg:mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2  h-full lg:h-[636px] container mx-auto  ">
             {/* Right Content - App Screenshots */}
             <div className="relative flex items-end justify-center order-last lg:order-last mb:0 pt-4 px-4 md:px-2 md:pt-0">
               {/* Main Screenshot */}
@@ -170,7 +170,7 @@ const Home = () => {
         </div>
         {/*========== Quran Section End here ============  */}
         {/*========== Free Features Section start here ============  */}
-        <div className="relative bg-[#EBFFF1] py-8 md:max-w-7xl md:mx-auto ">
+        <div className="relative bg-[#EBFFF1] py-8 container mx-auto ">
           <div className="mx-2">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-2">
               Free Features
@@ -193,7 +193,7 @@ const Home = () => {
                   slidesPerView: 2,
                 },
                 1024: {
-                  slidesPerView: 3.25,
+                  slidesPerView: 3,
                 },
               }}
               modules={[Autoplay, Pagination]}

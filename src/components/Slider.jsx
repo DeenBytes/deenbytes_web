@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaChevronLeft,FaChevronRight} from "react-icons/fa6";
+// import { FaChevronLeft,FaChevronRight} from "react-icons/fa6";
 const slides = [
   {
     id: 1,
@@ -69,7 +69,7 @@ export default function Slider() {
   return (
     <div className="relative w-full overflow-hidden bg-primary ">
       {/* Main Slider */}
-      <div className="relative h-[500px] w-full">
+      <div className="relative h-[500px] container  mx-auto">
         <div 
           className="absolute inset-0 z-10"
           onMouseEnter={() => setIsAutoPlaying(false)}
