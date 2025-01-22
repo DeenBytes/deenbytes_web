@@ -26,7 +26,7 @@ const Features = () => {
         const isMobile = window.innerWidth <= 768; 
 
         if (!isMobile) {
-            AOS.init({ duration: 800, once: true });
+            AOS.init({ duration: 800, once: false });
         } else {
             // Ensure content is visible on mobile even without AOS
             document.querySelectorAll("[data-aos]").forEach((el) => {
@@ -93,7 +93,7 @@ const Features = () => {
                                     {description}
                                 </p>
                             </div>
-                            <div className={`flex justify-center md:justify-start items-center md:items-center ${reverse ? 'md:order-first' : ''}`} data-aos="fade-right"
+                            <div className={`flex justify-center md:justify-center items-center md:items-center ${reverse ? 'md:order-first' : ''} max-h-[450px] max-w-[450px]`} 
                             >
                                 {icon}
                             </div>
@@ -111,77 +111,77 @@ const allFeature = [
         id: 1,
         title: "Prayer Time",
         description: "The prayer time feature in an DeenBytes app is essential for helping Muslims perform Salah (prayers) on time, a core obligation in Islam. These features provide accurate and user-friendly tools to ensure users never miss their prayers, regardless of their location or schedule.By incorporating a prayer time feature, DeenBytes app becomes a vital tool for Muslims to stay punctual in their prayers, fostering spiritual growth and fulfilling their religious obligations.",
-        icon: <img src="./assets/Prayer Time.png" alt="DeenBytes Prayer Time" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Prayer Time.png" alt="DeenBytes Prayer Time" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: false
     },
     {
         id: 2,
         title: "Qibla",
         description: "The Qibla features in DeenBytes app help users accurately determine the direction of the Kaaba in Makkah, which Muslims face during Salah (prayers). These features are crucial for ensuring the correct orientation for prayers, particularly for Muslims travelling or living in areas without easy access to mosques or community resources. By including Qibla features, DeenBytes app becomes an indispensable tool for Muslims, ensuring they can fulfill their religious obligations with ease and confidence.",
-        icon: <img src="./assets/Qibla.png" alt="DeenBytes Qibla" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Qibla.png" alt="DeenBytes Qibla" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: true
     },
     {
         id: 3,
         title: "Tasbih",
         description: "Tasbih features in DeenBytes help Muslims engage in this spiritual practice more effectively. Tasbih refers to the act of glorifying and praising Allah through the recitation of specific words or phrases, such as SubhanAllah (Glory be to Allah), Alhamdulillah (Praise be to Allah), and Allahu Akbar (Allah is the Greatest). Dhikr (remembrance of Allah) is highly emphasized in Islam.By incorporating Tasbih features, DeenBytes app can help users enhance their spiritual practice, maintain a constant connection with Allah, and build a habit of regular worship.",
-        icon: <img src="./assets/Tasbih.png" alt="DeeenBytes Tasbih" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Tasbih.png" alt="DeeenBytes Tasbih" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: false
     },
     {
         id: 4,
         title: "Find Mosque",
         description: "The Mosque Finder feature in DeenBytes app helps Muslims locate nearby mosques for prayer, community events, and other religious activities. This feature is especially important for Muslims living in non-Muslim-majority countries, travellers, and those who may not be familiar with their surroundings. It ensures that Muslims can fulfilll their religious obligations, such as performing Salah in the congregation, regardless of where they are.By including Mosque Finder features, DeenBytes app becomes an essential tool for Muslims to maintain their connection to the mosque, engage with their community, and ensure that they can perform their prayers and other religious duties consistently.",
-        icon: <img src="./assets/Find Mosque.png" alt="DeenBytes Find Mosque" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Find Mosque.png" alt="DeenBytes Find Mosque" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: true
     },
     {
         id: 5,
         title: "Duas",
         description: "Dua is a direct way of communicating with Allah, and the Dua feature in DeenBytes helps Muslims engage in supplication regularly, strengthening their spiritual connection with Allah. By incorporating a Dua feature, DeenBytes app becomes an invaluable tool for Muslims seeking to enhance their spiritual practices, seek Allah's help, and engage in consistent worship.",
-        icon: <img src="./assets/Duas.png" alt="DeenBytes Duas" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Duas.png" alt="DeenBytes Duas" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: false
     },
     {
         id: 6,
         title: "Quran",
         description: "The Quran is the holy book of Islam, revealed to the Prophet Muhammad (PBUH) as guidance for all of humanity. It is the ultimate source of knowledge, wisdom, and divine law. The features for reading and listening to the Quran in DeenBytes app is essential for Muslims to connect with Allah’s word, improve their understanding of the faith, and incorporate the Quran into their daily lives. These features play a critical role in facilitating the recitation, memorization, and reflection on the Quranic verses.",
-        icon: <img src="./assets/Quran.png" alt="DeenBytes Quran" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Quran.png" alt="DeenBytes Quran" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: true
     },
     {
         id: 7,
         title: "99 Names",
         description: "The 99 Names of Allah (Asma Ul Husna) are a set of names that describe the attributes and qualities of Allah. Each name reflects a different aspect of Allah’s divine nature, and understanding these names is a significant part of Islamic belief and practice. The 99 Names of Allah feature in DeenBytes app helps Muslims learn, reflect upon, and recite these names to strengthen their connection with Allah, gain spiritual benefits, and increase their understanding of His greatness.",
-        icon: <img src="./assets/99 Names.png" alt="DeenBytes 99 Names" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/99 Names.png" alt="DeenBytes 99 Names" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: false
     },
     {
         id: 8,
         title: "Zakat",
         description: " Zakat is one of the Five Pillars of Islam, and it holds immense significance in the lives of Muslims. It is a mandatory act of charity that purifies wealth and serves to redistribute wealth within the Muslim community. Zakat is not only a financial obligation but also a spiritual one, promoting social justice, helping those in need, and purifying the soul. Features related to Zakat in DeenBytes app help facilitate the calculation, understanding, and fulfilment of this important duty.By integrating Zakat features into DeenBytes app, Muslims are empowered to easily calculate, track, and donate their Zakat, fulfilling their religious obligations with ease and confidence.",
-        icon: <img src="./assets/Zakat.png" alt="DeenBytes Zakat" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Zakat.png" alt="DeenBytes Zakat" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: true
     },
     {
         id: 9,
         title: "Makkah Live",
         description: "The Makkah Live feature in an Islamic app provides Muslims with real-time access to the holy city of Makkah, where the Kaaba, the most sacred site in Islam, is located. This feature allows users to watch live broadcasts of the Masjid al-Haram, the mosque surrounding the Kaaba, and participate virtually in the spiritual atmosphere of Makkah. The significance of the Makkah Live feature is profound, as it helps Muslims around the world connect with the holiest place in Islam, especially for those who are unable to visit in person. The Makkah Live feature in DeenBytes app is a valuable tool for fostering spiritual connection, unity, and education. It allows Muslims to experience the holiness of Makkah, stay motivated for pilgrimage, and engage in worship, all while strengthening their relationship with Allah.",
-        icon: <img src="./assets/Makkah Live.png" alt="DeeenBytes Makkah Live" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Makkah Live.png" alt="DeeenBytes Makkah Live" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: false
     },
     {
         id: 10,
         title: "Calendar",
         description: "The Islamic calendar, also known as the Hijri calendar, holds significant importance in Islam, as it is used to determine the dates of key religious events, rituals, and observances. Unlike the Gregorian calendar, which is solar, the Islamic calendar is lunar, meaning it is based on the phases of the moon. This calendar plays a central role in the daily lives of Muslims, helping them follow the prescribed acts of worship and celebrate Islamic holidays.By structuring the year around acts of worship and reflection, the calendar encourages Muslims to live their lives in accordance with Allah’s guidance, ensuring that they remain spiritually connected and focused on their faith",
-        icon: <img src="./assets/Calendar.png" alt="DeenBytes Calendar" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Calendar.png" alt="DeenBytes Calendar" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: true
     },
     {
         id: 11,
         title: "Prayer Tracker",
         description: "The prayer tracking feature in DeenBytes apps plays a crucial role in helping Muslims maintain consistency and discipline in their daily prayers (Salah). It allows users to track their prayer habits, monitor their performance, and ensure they fulfill this essential pillar of Islam on time. The prayer tracking feature can include various functionalities, each designed to support and enhance the user's worship experience.The ability to track prayers also fosters accountability, allowing users to reflect on their performance and strive for improvement. Ultimately, prayer tracking features enhance the user’s connection to Allah and help them fulfill their religious duties with sincerity and devotion.",
-        icon: <img src="./assets/Prayer Tracker.png" alt="DeenBytes Prayer Tracker" className='h-full md:h-3/4 w-full md:w-3/4 object-contain' />,
+        icon: <img src="./assets/Prayer Tracker.png" alt="DeenBytes Prayer Tracker" className='h-full  w-full p-6 object-contain' data-aos="fade-right" />,
         reverse: false
     }
 ]

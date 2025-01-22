@@ -1,6 +1,24 @@
 import PropTypes from 'prop-types';
-
+import {useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const InfoCard = ({ title, titleColor, description, image, imagePosition = 'left' }) => {
+ useEffect(() => {
+         const isMobile = window.innerWidth <= 768; 
+ 
+         if (!isMobile) {
+             AOS.init({ duration: 800, once: false });
+         } else {
+             // Ensure content is visible on mobile even without AOS
+             document.querySelectorAll("[data-aos]").forEach((el) => {
+                 el.removeAttribute("data-aos");
+             });
+         }
+ 
+         return () => {
+             AOS.refresh();
+         };
+     }, []);
   return (
     <div className="bg-white  rounded-lg overflow-hidden shadow-md mb-16">
       <div className={`flex flex-col ${imagePosition === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'}`}>

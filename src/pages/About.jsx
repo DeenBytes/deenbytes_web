@@ -71,17 +71,17 @@ const About = () => {
           <h1 className="text-3xl md:text-5xl font-bold text-center mb-8">
             Application <span className="text-green-500 ">Objective</span>
           </h1>
-          <p className='text-base text-left mb-3 text-para'><span className='font-bold text-black'>Enhance Accessibility : </span> We are committed to making DeenBytes accessible to Muslims everywhere, ensuring that our app is available across various devices and platforms. Our goal is to break down barriers and provide an inclusive experience for all users.
+          <p className='text-base text-left mb-3 text-para px-4'><span className='font-bold text-black'>Enhance Accessibility : </span> We are committed to making DeenBytes accessible to Muslims everywhere, ensuring that our app is available across various devices and platforms. Our goal is to break down barriers and provide an inclusive experience for all users.
           </p>
-          <p className='text-base text-left mb-3 text-para'><span className='font-bold text-black'>Promote Education : </span> Through our educational content and live sessions with scholars, we aim to provide valuable knowledge and guidance to our users. Our goal is to support lifelong learning and help users deepen their understanding of Islam.
+          <p className='text-base text-left mb-3 text-para px-4'><span className='font-bold text-black'>Promote Education : </span> Through our educational content and live sessions with scholars, we aim to provide valuable knowledge and guidance to our users. Our goal is to support lifelong learning and help users deepen their understanding of Islam.
           </p>
-          <p className='text-base text-left mb-3 text-para'><span className='font-bold text-black'>Innovate Continuously : </span>
+          <p className='text-base text-left mb-3 text-para px-4'><span className='font-bold text-black'>Innovate Continuously : </span>
             We are dedicated to staying at the forefront of technological advancements and continuously improving our app’s features. Our goal is to provide a seamless and enjoyable user experience, with regular updates and new functionalities.
           </p>
-          <p className='text-base text-left mb-3 text-para'><span className='font-bold text-black'>Foster Community : </span>
+          <p className='text-base text-left mb-3 text-para px-4'><span className='font-bold text-black'>Foster Community : </span>
             We strive to create a sense of community among our users by offering features that encourage interaction and support. Our goal is to build a platform where Muslims can connect, share, and grow together in their faith.
           </p>
-          <p className='text-base text-left mb-3 text-para'><span className='font-bold text-black'>Ensure Quality : </span>
+          <p className='text-base text-left mb-3 text-para px-4'><span className='font-bold text-black'>Ensure Quality : </span>
             We are committed to maintaining the highest standards of quality in everything we do. Our goal is to deliver reliable, accurate, and beneficial content that our users can trust.
           </p>
         </div>

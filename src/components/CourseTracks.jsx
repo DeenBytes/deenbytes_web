@@ -24,7 +24,7 @@ const [courses,setCourses] = useState([])
     }, [])
 
     return (
-        <div className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
             <div className="text-center mb-8 sm:mb-12">
                 <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
                     Upcoming Live Courses
@@ -34,7 +34,7 @@ const [courses,setCourses] = useState([])
                 </p>
             </div>
 
-            <div className="overflow-x-auto scrollbar-hide">
+            <div className="overflow-x-auto ">
                 <div className="grid grid-flow-col  lg:grid-cols-3 auto-cols-[minmax(300px,_1fr)] gap-6 sm:gap-8 mb-5 snap-x snap-mandatory pt-6 ">
                     {courses?.length <= 0 ? (
                         Array.from({ length: 3 }).map((_, index) => (

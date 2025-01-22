@@ -108,7 +108,7 @@ const Home = () => {
             {/* Left Side - Phone Mockups */}
             <div className="relative">
               <div className='flex justify-center items-center'>
-                <img src="./assets/mobile.png" alt="DeenBytesApps" className="w-3/4 md:w-2/4  h-3/4 md:h-2/4 object-contain" />
+                <img src="./assets/mobile.png" alt="DeenBytesApps" className="w-3/4 md:w-full md:max-w-[470px] md:max-h-[600px]  h-3/4 md:h-full object-contain" />
               </div>
 
             </div>
@@ -170,7 +170,7 @@ const Home = () => {
         </div>
         {/*========== Quran Section End here ============  */}
         {/*========== Free Features Section start here ============  */}
-        <div className="relative bg-[#EBFFF1] py-8 container mx-auto ">
+        <div className="relative bg-[#EBFFF1] py-8 ">
           <div className="mx-2">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-2">
               Free Features
@@ -178,6 +178,7 @@ const Home = () => {
             <p className="text-center text-para mb-8">
               These services are designed to make practicing Islam easier and more accessible for everyone.
             </p>
+            <div className='max-w-7xl mx-auto'>
             <Swiper
               slidesPerView={1}
               spaceBetween={20}
@@ -221,6 +222,7 @@ const Home = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            </div>
 
           </div>
         </div>

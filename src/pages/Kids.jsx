@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, {  useEffect, useState } from 'react'
 import GotoTop from '../components/reusebleComp/GotoTop'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
@@ -31,22 +29,6 @@ const Kids = () => {
         setCurrentSlide(index);
     };
 
-    useEffect(() => {
-        const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
-
-        if (!isMobile) {
-            AOS.init({ duration: 800, once: true });
-        } else {
-            // Ensure content is visible on mobile even without AOS
-            document.querySelectorAll("[data-aos]").forEach((el) => {
-                el.removeAttribute("data-aos");
-            });
-        }
-
-        return () => {
-            AOS.refresh();
-        };
-    }, []);
 
     return (
         <>
@@ -154,7 +136,7 @@ const Kids = () => {
                             pagination={{ clickable: true }}
                             breakpoints={{
                                 768: { slidesPerView: 2, slidesPerGroup: 2 },
-                                1024: { slidesPerView: 3, slidesPerGroup: 3 },
+                                850: { slidesPerView: 3, slidesPerGroup: 3 },
                             }}
                             navigation={{
                                 prevEl: '.custom-prev',
@@ -192,11 +174,11 @@ const Kids = () => {
                                                     </h2>
                                                     <h3 className='text-2xl font-medium '>{slide?.subTitle}</h3>
                                                 </div>
-                                                <div className="absolute inset-0 flex flex-col items-center justify-start mt-6 p-4 text-center">
+                                                <div className="absolute inset-0 flex flex-col items-center justify-start mt-6 p-4 text-center ">
                                                     <h2 className="text-lg font-bold mb-2 opacity-0 group-hover:opacity-100">
                                                         {slide.title}
                                                     </h2>
-                                                    <p className="opacity-0 text-base transition-opacity duration-300 group-hover:opacity-100">
+                                                    <p className="opacity-0 text-base transition-opacity duration-300 group-hover:opacity-100 overflow-auto">
                                                         {slide.description}
                                                     </p>
                                                 </div>
@@ -223,10 +205,10 @@ const Kids = () => {
                         {guides.map((guide, index) => (
                             <InfoCard
                                 key={index}
-                                title={guide.title}
-                                description={guide.description}
-                                image={guide.image}
-                                imagePosition={guide.imagePosition}
+                                title={guide?.title}
+                                description={guide?.description}
+                                image={guide?.image}
+                                imagePosition={guide?.imagePosition}
                             />
                         ))}
                     </div>
