@@ -73,9 +73,11 @@ const Home = () => {
             <a href="https://play.google.com/store/apps/details?id=com.blessedventures.deenbytes" target="_blank" rel="noopener noreferrer">
               <img src="./assets/kids/google-play-app-store.svg" alt="Get it on Google Play deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain animate-zoomIn" />
             </a>
-            <a href="https://play.google.com/store/apps/details?id=com.deenbytes.deenbytes" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/kids/applestore.svg" alt="Get it on App store deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain animate-zoomIn" />
-            </a>
+            <div className='relative'>
+            <span className='absolute top-[-25px] left-0 md:top-[-16px] text-black mb-1 font-bold '>Coming soon...</span>
+              <img src="./assets/kids/applestore.svg" alt="Get it on App store deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain" />
+            </div>
+            
           </div>
         </div>
       </div>

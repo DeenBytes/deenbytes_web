@@ -166,3 +166,8 @@ color:#4caf50;
   background: #228130; /* Scrollbar thumb color */
   border-radius: 3px; /* Optional: Rounded corners */
 }
+.tawk-branding {
+  display: none !important;
+  -ms-flex-align: center !important;
+  align-items: center;
+}
