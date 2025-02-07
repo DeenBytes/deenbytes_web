@@ -74,7 +74,7 @@ const Home = () => {
               <img src="./assets/kids/google-play-app-store.svg" alt="Get it on Google Play deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain animate-zoomIn" />
             </a>
             <div className='relative'>
-            <span className='absolute top-[-25px] left-0 md:top-[-16px] text-black mb-1 font-bold '>Coming soon...</span>
+            <span className='absolute top-[-25px] left-0 md:top-[-12px] text-black text-sm mb-1 font-semibold '>Coming soon...</span>
               <img src="./assets/kids/applestore.svg" alt="Get it on App store deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain" />
             </div>
             

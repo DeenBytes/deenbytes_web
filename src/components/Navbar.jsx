@@ -13,11 +13,13 @@ const Navbar = () => {
     return (
         <div className="h-[80px] flex justify-between items-center text-white sticky top-0 z-50 bg-no-repeat bg-center bg-cover shadow-md py-4 px-4 " style={{ backgroundImage: "url('./assets/DeenbytesHeader.png')" }}>
                 <div className="flex items-center gap-2">
+                    <Link to="/">
                     <img
                         src="./assets/DeenbyteLogo.png"
                         alt="deenbytes logo"
                         className="h-14 w-full object-contain"
                     />
+                    </Link>
                 </div>
             <nav className=" flex items-center justify-between  mx-5">
                 <div className="md:hidden">

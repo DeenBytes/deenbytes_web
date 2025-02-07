@@ -22,7 +22,7 @@ const Footer = () => {
                                 <img src="./assets/whitePlay.svg" alt="Get it on Google Play deenbytes" className="w-48 h-20 object-contain animate-zoomIn" />
                             </a>
                             <div className='relative'>
-                                <span className='absolute top-[-25px] left-0 md:top-[-16px] text-white mb-1 font-bold '>Coming soon...</span>
+                                <span className='absolute top-[-25px] left-0 md:top-[-12px] text-white text-sm mb-1 font-semibold'>Coming soon...</span>
                                 <img src="./assets/whiteApp.svg" alt="Get it on App store deenbytes" className="w-48 h-20 object-contain" />
                             </div>
 
@@ -56,9 +56,11 @@ const Footer = () => {
 
                 {/* Logo and Social Links Section */}
                 <div className="space-y-4 md:col-span-4">
+                        <Link to='/'>
                     <div className="flex space-x-4 mt-4 md:mt-0">
                         <img src="./assets/WhiteLogo.svg" alt="Deenbytes Logo" className="h-16 md:h-1/3 md:w-3/4 object-contain" />
                     </div>
+                        </Link>
                     <p className="text-gray-400 text-left max-w-sm">
                         Where Faith Meets Technology for Muslims Worldwide. DeenBytes App simplifies daily worship with advanced features like Qibla Finder, Duas, and educational content. Join DeenBytes and take a step closer to living an organized, faith-filled life.
                     </p>
