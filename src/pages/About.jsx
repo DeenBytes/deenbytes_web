@@ -52,7 +52,7 @@ const About = () => {
           style={{ backgroundImage: `url("./assets/aboutbg.png")` }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-[#084e33] opacity-80"></div>
+          <div className="absolute inset-0 bg-[#084e33] opacity-70"></div>
 
           {/* Content */}
           <div className="absolute inset-0 flex justify-center items-center flex-col text-center max-w-3xl mx-auto">

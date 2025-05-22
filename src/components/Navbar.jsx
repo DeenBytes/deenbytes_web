@@ -68,10 +68,10 @@ const Navbar = () => {
                     Try the App
                     </button>
                     </Link>
-                    <div className="text-primary flex justify-center items-center">
+                    {/* <div className="text-primary flex justify-center items-center">
 
                     <FaUserCircle  size={30}/>
-                    </div>
+                    </div> */}
                 </ul>
 
             </nav>

@@ -68,15 +68,18 @@ const Home = () => {
           <p className="text-[#292929] text-base font-semibold mt-4 ">
             Empower your faith with DeenBytes App—offering Quran tools, prayer alerts, kids' games, and more.
           </p>
-          <h2 className='font-bold text-xl text-[#292929] mt-5'>Get the App</h2>
-          <div className='flex gap-5 mt-5'>
+          <h2 className='font-bold text-xl text-[#292929] mt-6'>Get the App</h2>
+          <div className='flex gap-3 mt-4'>
             <a href="https://play.google.com/store/apps/details?id=com.blessedventures.deenbytes" target="_blank" rel="noopener noreferrer">
-              <img src="./assets/kids/google-play-app-store.svg" alt="Get it on Google Play deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain animate-zoomIn" />
+              <img src="./assets/kids/google-play-app-store.svg" alt="Get it on Google Play deenbytes" className="w-full md:w-40  h-full md:h-12 object-contain animate-zoomIn" />
             </a>
-            <div className='relative'>
+             <a href="https://www.apple.com/in/search/deenbytes?src=globalnav" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/kids/applestore.svg" alt="Get it on App store deenbytes" className="w-full md:w-40  h-full md:h-12 object-contain animate-zoomIn" />
+            </a>
+            {/* <div className='relative'>
             <span className='absolute top-[-25px] left-0 md:top-[-12px] text-black text-sm mb-1 font-semibold '>Coming soon...</span>
               <img src="./assets/kids/applestore.svg" alt="Get it on App store deenbytes" className="w-full md:w-48  h-full md:h-20 object-contain" />
-            </div>
+            </div> */}
             
           </div>
         </div>

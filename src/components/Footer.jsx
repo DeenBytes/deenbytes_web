@@ -17,14 +17,17 @@ const Footer = () => {
                     </ul>
                     <div className='mt-4'>
                         <h3 className="text-lg font-medium mt-2">Download the App</h3>
-                        <div className='flex flex-col gap-5'>
+                        <div className='flex flex-col gap-1'>
                             <a href="https://play.google.com/store/apps/details?id=com.blessedventures.deenbytes" target="_blank" rel="noopener noreferrer">
                                 <img src="./assets/whitePlay.svg" alt="Get it on Google Play deenbytes" className="w-48 h-20 object-contain animate-zoomIn" />
                             </a>
-                            <div className='relative'>
+                             <a href="https://www.apple.com/in/search/deenbytes?src=globalnav" target="_blank" rel="noopener noreferrer">
+                                <img src="./assets/whiteApp.svg" alt="Get it on App store deenbytes" className="w-48 h-20 object-contain animate-zoomIn" />
+                            </a>
+                            {/* <div className='relative'>
                                 <span className='absolute top-[-25px] left-0 md:top-[-12px] text-white text-sm mb-1 font-semibold'>Coming soon...</span>
                                 <img src="./assets/whiteApp.svg" alt="Get it on App store deenbytes" className="w-48 h-20 object-contain" />
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
