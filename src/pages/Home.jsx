@@ -66,7 +66,7 @@ const Home = () => {
             Seamlessly
           </h1>
           <p className="text-[#292929] text-base font-semibold mt-4 ">
-            Empower your faith with DeenBytes App—offering Quran tools, prayer alerts, kids' games, and more.
+            Empower your faith with DeenBytes App, offering Quran tools, prayer alerts, kids' games, and more.
           </p>
           <h2 className='font-bold text-xl text-[#292929] mt-6'>Get the App</h2>
           <div className='flex gap-3 mt-4'>
