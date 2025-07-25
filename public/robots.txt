@@ -6,7 +6,8 @@ Disallow:
 
 # Optional: Block image indexing by Google
 User-agent: Googlebot-Image
-Disallow: /
+Allow: /favicon/
+
 
 # Optional: Block specific bad/spammy bots (optional - adjust based on your traffic analysis)
 User-agent: Baiduspider
